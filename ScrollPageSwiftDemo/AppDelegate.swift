@@ -3,7 +3,7 @@
 //  ScrollPageSwiftDemo
 //
 //  Created by zhangwenjun on 16/6/28.
-//  Copyright © 2016年 zcgt_ios_01. All rights reserved.
+//  Copyright © 2016年 zcgt_ios_01. All rights reserved.检测一下
 //
 
 import UIKit
