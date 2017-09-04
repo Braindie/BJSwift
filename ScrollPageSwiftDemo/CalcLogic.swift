@@ -9,8 +9,8 @@
 import Foundation
 
 enum Operator : Int {
-    case Plus = 200, Minus, Multiply, Divide
-    case Default = 0
+    case plus = 200, minus, multiply, divide
+    case `default` = 0
 }
 
 
@@ -28,11 +28,11 @@ class CalcLogic {
     init () {
         lastRetainValue = 0.0
         isMainlabelTextTemporary = false
-        opr = .Default
+        opr = .default
     }
     
     //数字，操作符的输入处理
-    func updateMainLabelStringByNumberTag(tag : Int, withmainlabelString mainlabelString : String) -> String {
+    func updateMainLabelStringByNumberTag(_ tag : Int, withmainlabelString mainlabelString : String) -> String {
         var string = mainlabelString
         
         
@@ -45,7 +45,7 @@ class CalcLogic {
         
         let optNumber = tag - 100
         //把string转为double（括号里面的语句是把swift的字符串转换为oc的字符串）
-        var mainLabelDouble = (string as NSString).doubleValue
+        let mainLabelDouble = (string as NSString).doubleValue
         
         
         //多次输入0的情况，输入0后再输入其他数
@@ -55,31 +55,29 @@ class CalcLogic {
         //拼接字符串
         let resultString = string + String(optNumber)
         return resultString
-        
-        
     }
     
 
     
     //运算
-    func calculateByTag(tag : Int, withmainlabelString mainLabelString : String)->String{
+    func calculateByTag(_ tag : Int, withmainlabelString mainLabelString : String)->String{
         
         
         //把string转为double，小数点后只有0数据会自动变成整型
-        var currentValue = (mainLabelString as NSString).doubleValue
+        let currentValue = (mainLabelString as NSString).doubleValue
         
         switch opr {
-        case .Plus:
+        case .plus:
             lastRetainValue += currentValue
-        case .Minus:
+        case .minus:
             lastRetainValue -= currentValue
-        case .Multiply:
+        case .multiply:
             lastRetainValue *= currentValue
-        case .Divide:
+        case .divide:
             if lastRetainValue != 0{
                 lastRetainValue /= currentValue
             }else{
-                opr = .Default
+                opr = .default
                 isMainlabelTextTemporary = true
                 return "错误"
             }
@@ -104,12 +102,12 @@ class CalcLogic {
     func clear(){
         lastRetainValue = 0.0
         isMainlabelTextTemporary = false
-        opr = .Default
+        opr = .default
     }
     
     
     //判断是否包含有小数点（有小数点就返回true）
-    func doesStringContainDecimal(string : String) -> Bool {
+    func doesStringContainDecimal(_ string : String) -> Bool {
         for ch in string.characters{//（有变化）
             if ch == "." {
                 return true
@@ -117,10 +115,4 @@ class CalcLogic {
         }
         return false
     }
-    
-    
-    
-    
-    
-    
 }

@@ -197,13 +197,16 @@
 					E53448B41D22538F00C38AB4 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = D52TEC35MW;
+						LastSwiftMigration = 0820;
 					};
 					E53448C81D22538F00C38AB4 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = E53448B41D22538F00C38AB4;
 					};
 					E53448D31D22538F00C38AB4 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = E53448B41D22538F00C38AB4;
 					};
 				};
@@ -410,7 +413,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.text.ScrollPageSwiftDemo;
 				PRODUCT_NAME = CalculatorDemo;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -424,7 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.text.ScrollPageSwiftDemo;
 				PRODUCT_NAME = CalculatorDemo;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -436,6 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.text.ScrollPageSwiftDemoTests;
 				PRODUCT_NAME = CalculatorDemo;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalculatorDemo.app/CalculatorDemo";
 			};
 			name = Debug;
@@ -448,6 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.text.ScrollPageSwiftDemoTests;
 				PRODUCT_NAME = CalculatorDemo;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalculatorDemo.app/CalculatorDemo";
 			};
 			name = Release;
@@ -459,6 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.text.ScrollPageSwiftDemoUITests;
 				PRODUCT_NAME = CalculatorDemo;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ScrollPageSwiftDemo;
 			};
 			name = Debug;
@@ -470,6 +476,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.text.ScrollPageSwiftDemoUITests;
 				PRODUCT_NAME = CalculatorDemo;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ScrollPageSwiftDemo;
 			};
 			name = Release;

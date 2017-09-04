@@ -35,15 +35,15 @@ class ViewController: UIViewController {
     
     
     //数字按钮
-    @IBAction func numberButtonPressed(sender: AnyObject) {
+    @IBAction func numberButtonPressed(_ sender: AnyObject) {
         
-        var btn : UIButton = sender as! UIButton
+        let btn : UIButton = sender as! UIButton
         //刷新label的值
         mainLabel.text = logic.updateMainLabelStringByNumberTag(btn.tag, withmainlabelString: mainLabel.text!)
     }
 
     //小数点按钮
-    @IBAction func decimalPressed(sender: AnyObject) {
+    @IBAction func decimalPressed(_ sender: AnyObject) {
         if logic.doesStringContainDecimal(mainLabel.text!) == false {
             let string = mainLabel.text! + "."
             
@@ -53,25 +53,25 @@ class ViewController: UIViewController {
     }
     
     //清除按钮
-    @IBAction func clearPressed(sender: AnyObject) {
+    @IBAction func clearPressed(_ sender: AnyObject) {
         
         mainLabel.text = "0"
         logic.clear()
     }
     
     //等于按钮
-    @IBAction func eqalsPressed(sender: AnyObject) {
+    @IBAction func eqalsPressed(_ sender: AnyObject) {
         
-        var btn : UIButton = sender as! UIButton
+        let btn : UIButton = sender as! UIButton
         
         mainLabel.text = logic.calculateByTag(btn.tag, withmainlabelString: mainLabel.text!)
         
     }
     
     //运算符按钮
-    @IBAction func operandPressed(sender: AnyObject) {
+    @IBAction func operandPressed(_ sender: AnyObject) {
         
-        var btn : UIButton = sender as! UIButton
+        let btn : UIButton = sender as! UIButton
         
         mainLabel.text = logic.calculateByTag(btn.tag, withmainlabelString: mainLabel.text!)
         
