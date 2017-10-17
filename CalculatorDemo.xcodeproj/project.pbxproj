@@ -12,8 +12,6 @@
 		E53448BE1D22538F00C38AB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53448BC1D22538F00C38AB4 /* Main.storyboard */; };
 		E53448C01D22538F00C38AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53448BF1D22538F00C38AB4 /* Assets.xcassets */; };
 		E53448C31D22538F00C38AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53448C11D22538F00C38AB4 /* LaunchScreen.storyboard */; };
-		E53448CE1D22538F00C38AB4 /* ScrollPageSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53448CD1D22538F00C38AB4 /* ScrollPageSwiftDemoTests.swift */; };
-		E53448D91D22538F00C38AB4 /* ScrollPageSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53448D81D22538F00C38AB4 /* ScrollPageSwiftDemoUITests.swift */; };
 		E5749E6D1D23717F0049EA5B /* CalcLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5749E6C1D23717F0049EA5B /* CalcLogic.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,11 +41,7 @@
 		E53448C21D22538F00C38AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E53448C41D22538F00C38AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53448C91D22538F00C38AB4 /* CalculatorDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E53448CD1D22538F00C38AB4 /* ScrollPageSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPageSwiftDemoTests.swift; sourceTree = "<group>"; };
-		E53448CF1D22538F00C38AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53448D41D22538F00C38AB4 /* CalculatorDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E53448D81D22538F00C38AB4 /* ScrollPageSwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPageSwiftDemoUITests.swift; sourceTree = "<group>"; };
-		E53448DA1D22539000C38AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5749E6C1D23717F0049EA5B /* CalcLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				E53448B71D22538F00C38AB4 /* ScrollPageSwiftDemo */,
-				E53448CC1D22538F00C38AB4 /* ScrollPageSwiftDemoTests */,
-				E53448D71D22538F00C38AB4 /* ScrollPageSwiftDemoUITests */,
 				E53448B61D22538F00C38AB4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,24 +100,6 @@
 				E53448C41D22538F00C38AB4 /* Info.plist */,
 			);
 			path = ScrollPageSwiftDemo;
-			sourceTree = "<group>";
-		};
-		E53448CC1D22538F00C38AB4 /* ScrollPageSwiftDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				E53448CD1D22538F00C38AB4 /* ScrollPageSwiftDemoTests.swift */,
-				E53448CF1D22538F00C38AB4 /* Info.plist */,
-			);
-			path = ScrollPageSwiftDemoTests;
-			sourceTree = "<group>";
-		};
-		E53448D71D22538F00C38AB4 /* ScrollPageSwiftDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E53448D81D22538F00C38AB4 /* ScrollPageSwiftDemoUITests.swift */,
-				E53448DA1D22539000C38AB4 /* Info.plist */,
-			);
-			path = ScrollPageSwiftDemoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +247,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E53448CE1D22538F00C38AB4 /* ScrollPageSwiftDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E53448D91D22538F00C38AB4 /* ScrollPageSwiftDemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
