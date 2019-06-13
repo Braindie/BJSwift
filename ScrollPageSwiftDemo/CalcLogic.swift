@@ -108,7 +108,7 @@ class CalcLogic {
     
     //判断是否包含有小数点（有小数点就返回true）
     func doesStringContainDecimal(_ string : String) -> Bool {
-        for ch in string.characters{//（有变化）
+        for ch in string{//（有变化）
             if ch == "." {
                 return true
             }
