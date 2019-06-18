@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="giK-t5-MIS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="giK-t5-MIS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,21 +14,55 @@
             <objects>
                 <navigationController id="giK-t5-MIS" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BrP-ug-yHW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ZH0-QO-dq1" kind="relationship" relationship="rootViewController" id="v6K-xM-Y6I"/>
+                        <segue destination="cTM-oF-JTF" kind="relationship" relationship="rootViewController" id="HWz-B4-khB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0e-Rk-zak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-313" y="1093"/>
+            <point key="canvasLocation" x="-1009" y="534"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="3GQ-ja-Rrx">
+            <objects>
+                <viewController id="cTM-oF-JTF" customClass="RootViewController" customModule="CalculatorDemo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Hy-xF-9NF"/>
+                        <viewControllerLayoutGuide type="bottom" id="CC9-le-YeZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aQ7-UX-PK0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d9n-mD-3ZB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d9n-mD-3ZB" firstAttribute="leading" secondItem="aQ7-UX-PK0" secondAttribute="leading" id="6HP-LP-7up"/>
+                            <constraint firstItem="d9n-mD-3ZB" firstAttribute="top" secondItem="aQ7-UX-PK0" secondAttribute="top" id="Ecv-YM-M1D"/>
+                            <constraint firstItem="CC9-le-YeZ" firstAttribute="top" secondItem="d9n-mD-3ZB" secondAttribute="bottom" id="nGW-Wi-rme"/>
+                            <constraint firstAttribute="trailing" secondItem="d9n-mD-3ZB" secondAttribute="trailing" id="sWo-rL-D6Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zW5-yl-G3G"/>
+                    <connections>
+                        <outlet property="myTableView" destination="d9n-mD-3ZB" id="HAc-1p-Ge2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csy-5T-dnp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10.4" y="537.48125937031489"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0hy-4F-HMr">
             <objects>
-                <viewController id="ZH0-QO-dq1" customClass="ViewController" customModule="CalculatorDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="ZH0-QO-dq1" customClass="ViewController" customModule="CalculatorDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2qg-AE-xvB"/>
                         <viewControllerLayoutGuide type="bottom" id="Wfa-MN-UPt"/>
@@ -224,12 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be4-c3-lvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="1093"/>
+            <point key="canvasLocation" x="1001" y="537"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>
