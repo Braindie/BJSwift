@@ -14,6 +14,7 @@
 		E5C2F92822B88EC900F0CECE /* BJClassAndInstanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2F92722B88EC900F0CECE /* BJClassAndInstanceViewController.swift */; };
 		E5C2F92A22B8956000F0CECE /* BJMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2F92922B8956000F0CECE /* BJMethods.swift */; };
 		E5C2F92D22B8B99300F0CECE /* BJExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2F92C22B8B99300F0CECE /* BJExtensionViewController.swift */; };
+		E5C2F93922B8FD0300F0CECE /* BJDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2F93822B8FD0300F0CECE /* BJDelegateViewController.swift */; };
 		E5C6EAD622B3884000C57C52 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6EAD522B3884000C57C52 /* RootViewController.swift */; };
 		E5C6EADA22B388E500C57C52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6EAD822B388E500C57C52 /* ViewController.swift */; };
 		E5C6EADB22B388E500C57C52 /* CalcLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6EAD922B388E500C57C52 /* CalcLogic.swift */; };
@@ -48,6 +49,7 @@
 		E5C2F92722B88EC900F0CECE /* BJClassAndInstanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJClassAndInstanceViewController.swift; sourceTree = "<group>"; };
 		E5C2F92922B8956000F0CECE /* BJMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJMethods.swift; sourceTree = "<group>"; };
 		E5C2F92C22B8B99300F0CECE /* BJExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJExtensionViewController.swift; sourceTree = "<group>"; };
+		E5C2F93822B8FD0300F0CECE /* BJDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJDelegateViewController.swift; sourceTree = "<group>"; };
 		E5C6EAD522B3884000C57C52 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E5C6EAD822B388E500C57C52 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5C6EAD922B388E500C57C52 /* CalcLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcLogic.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		E53448B71D22538F00C38AB4 /* BJSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E5C2F93722B8FCF300F0CECE /* Delegate */,
 				E5C2F92B22B8B95D00F0CECE /* Extension */,
 				E5C2F92622B88D7A00F0CECE /* BJClassAndInstanceMethod */,
 				E5C6EAD722B388E500C57C52 /* CalcLogic */,
@@ -127,6 +130,14 @@
 				E5C2F92C22B8B99300F0CECE /* BJExtensionViewController.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E5C2F93722B8FCF300F0CECE /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E5C2F93822B8FD0300F0CECE /* BJDelegateViewController.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		E5C6EAD722B388E500C57C52 /* CalcLogic */ = {
@@ -281,6 +292,7 @@
 				E53448B91D22538F00C38AB4 /* AppDelegate.swift in Sources */,
 				E5C6EAD622B3884000C57C52 /* RootViewController.swift in Sources */,
 				E5C6EADB22B388E500C57C52 /* CalcLogic.swift in Sources */,
+				E5C2F93922B8FD0300F0CECE /* BJDelegateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

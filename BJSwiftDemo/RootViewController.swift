@@ -8,7 +8,9 @@
 
 import UIKit
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ClickDelegate{
+
+    
 
     @IBOutlet weak var myTableView: UITableView!
     
@@ -29,11 +31,17 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         if indexPath.row == 0 {
-            cell.textLabel?.text = "计算器"
+            cell.textLabel?.text = "1、计算器"
         } else if indexPath.row == 1 {
-            cell.textLabel?.text = "类方法与实例方法"
+            cell.textLabel?.text = "2、多态（同OC）"
         } else if indexPath.row == 2 {
-            cell.textLabel?.text = "扩展"
+            cell.textLabel?.text = "3、代理"
+        } else if indexPath.row == 3 {
+            cell.textLabel?.text = "4、类方法与实例方法"
+        } else if indexPath.row == 4 {
+            cell.textLabel?.text = "5、KVC，KVO"
+        } else if indexPath.row == 5 {
+            cell.textLabel?.text = "6、扩展"
         }
         return cell
     }
@@ -44,13 +52,26 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             let vc = sb.instantiateViewController(withIdentifier: "ViewController")
             self.navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 1 {
+
+        } else if indexPath.row == 2 {
+            let vc = BJDelegateViewController()
+            vc.delegate = self as ClickDelegate
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 3 {
             let vc = BJClassAndInstanceViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        } else if indexPath.row == 2 {
+        } else if indexPath.row == 4 {
+
+        } else if indexPath.row == 5 {
             let vc = BJExtensionViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
-
+    }
+    
+    
+    //MARK: -
+    func click() {
+        print("收到代理事件")
     }
 }
 
