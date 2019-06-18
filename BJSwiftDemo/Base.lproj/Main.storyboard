@@ -28,7 +28,7 @@
         <!--Root View Controller-->
         <scene sceneID="3GQ-ja-Rrx">
             <objects>
-                <viewController id="cTM-oF-JTF" customClass="RootViewController" customModule="CalculatorDemo" sceneMemberID="viewController">
+                <viewController id="cTM-oF-JTF" customClass="RootViewController" customModule="BJSwiftDemo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Hy-xF-9NF"/>
                         <viewControllerLayoutGuide type="bottom" id="CC9-le-YeZ"/>
@@ -62,7 +62,7 @@
         <!--View Controller-->
         <scene sceneID="0hy-4F-HMr">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="ZH0-QO-dq1" customClass="ViewController" customModule="CalculatorDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="ZH0-QO-dq1" customClass="ViewController" customModule="BJSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2qg-AE-xvB"/>
                         <viewControllerLayoutGuide type="bottom" id="Wfa-MN-UPt"/>

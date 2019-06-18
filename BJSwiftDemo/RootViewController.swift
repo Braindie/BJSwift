@@ -30,6 +30,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell: UITableViewCell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         if indexPath.row == 0 {
             cell.textLabel?.text = "计算器"
+        } else if indexPath.row == 1 {
+            cell.textLabel?.text = "类方法与实例方法"
+        } else if indexPath.row == 2 {
+            cell.textLabel?.text = "扩展"
         }
         return cell
     }
@@ -38,6 +42,12 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row == 0 {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "ViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 1 {
+            let vc = BJClassAndInstanceViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 2 {
+            let vc = BJExtensionViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E53448B41D22538F00C38AB4"
                BuildableName = "CalculatorDemo.app"
-               BlueprintName = "CalculatorDemo"
-               ReferencedContainer = "container:CalculatorDemo.xcodeproj">
+               BlueprintName = "BJSwiftDemo"
+               ReferencedContainer = "container:BJSwiftDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E53448C81D22538F00C38AB4"
                BuildableName = "CalculatorDemo.xctest"
-               BlueprintName = "CalculatorDemoTests"
-               ReferencedContainer = "container:CalculatorDemo.xcodeproj">
+               BlueprintName = "BJSwiftDemoTests"
+               ReferencedContainer = "container:BJSwiftDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,8 +44,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E53448D31D22538F00C38AB4"
                BuildableName = "CalculatorDemo.xctest"
-               BlueprintName = "CalculatorDemoUITests"
-               ReferencedContainer = "container:CalculatorDemo.xcodeproj">
+               BlueprintName = "BJSwiftDemoUITests"
+               ReferencedContainer = "container:BJSwiftDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,8 +54,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E53448B41D22538F00C38AB4"
             BuildableName = "CalculatorDemo.app"
-            BlueprintName = "CalculatorDemo"
-            ReferencedContainer = "container:CalculatorDemo.xcodeproj">
+            BlueprintName = "BJSwiftDemo"
+            ReferencedContainer = "container:BJSwiftDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E53448B41D22538F00C38AB4"
             BuildableName = "CalculatorDemo.app"
-            BlueprintName = "CalculatorDemo"
-            ReferencedContainer = "container:CalculatorDemo.xcodeproj">
+            BlueprintName = "BJSwiftDemo"
+            ReferencedContainer = "container:BJSwiftDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,8 +96,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E53448B41D22538F00C38AB4"
             BuildableName = "CalculatorDemo.app"
-            BlueprintName = "CalculatorDemo"
-            ReferencedContainer = "container:CalculatorDemo.xcodeproj">
+            BlueprintName = "BJSwiftDemo"
+            ReferencedContainer = "container:BJSwiftDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
