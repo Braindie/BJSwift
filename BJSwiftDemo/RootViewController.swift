@@ -31,21 +31,23 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         if indexPath.row == 0 {
-            cell.textLabel?.text = "1、计算器"
+            cell.textLabel?.text = "0、计算器"
         } else if indexPath.row == 1 {
-            cell.textLabel?.text = "2、多态（同OC）"
+            cell.textLabel?.text = "1、多态（同OC）"
         } else if indexPath.row == 2 {
-            cell.textLabel?.text = "3、代理"
+            cell.textLabel?.text = "2、代理"
         } else if indexPath.row == 3 {
-            cell.textLabel?.text = "4、类方法与实例方法"
+            cell.textLabel?.text = "3、KVO（OC特性，通过NSObject实现）"
         } else if indexPath.row == 4 {
-            cell.textLabel?.text = "5、KVC，KVO"
+            cell.textLabel?.text = "4、KVC（静态语言，通过NSObject实现）"
         } else if indexPath.row == 5 {
-            cell.textLabel?.text = "6、扩展"
+            cell.textLabel?.text = "5、扩展"
         } else if indexPath.row == 6 {
-            cell.textLabel?.text = "7、闭包（类比Block）"
+            cell.textLabel?.text = "6、闭包（类比Block）"
         } else if indexPath.row == 7 {
-            cell.textLabel?.text = "8、构造器（类比于指定初始化函数）"
+            cell.textLabel?.text = "7、构造器（类比于指定初始化函数）"
+        } else if indexPath.row == 8 {
+            cell.textLabel?.text = "8、类方法与实例方法"
         }
         return cell
     }
@@ -62,7 +64,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             vc.delegate = self as ClickDelegate
             self.navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 3 {
-            let vc = BJClassAndInstanceViewController()
+            let vc = BJKVOViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 4 {
 
@@ -78,6 +80,9 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 7 {
             let vc = BJConstructorViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 8 {
+            let vc = BJClassAndInstanceViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
