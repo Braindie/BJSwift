@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E50D7FB222BA055B00634B1B /* BJClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D7FB122BA055B00634B1B /* BJClosureViewController.swift */; };
+		E50D7FB522BA1FE700634B1B /* BJConstructorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D7FB422BA1FE700634B1B /* BJConstructorViewController.swift */; };
 		E53448B91D22538F00C38AB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53448B81D22538F00C38AB4 /* AppDelegate.swift */; };
 		E53448BE1D22538F00C38AB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53448BC1D22538F00C38AB4 /* Main.storyboard */; };
 		E53448C01D22538F00C38AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53448BF1D22538F00C38AB4 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E50D7FB122BA055B00634B1B /* BJClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJClosureViewController.swift; sourceTree = "<group>"; };
+		E50D7FB422BA1FE700634B1B /* BJConstructorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJConstructorViewController.swift; sourceTree = "<group>"; };
 		E53448B51D22538F00C38AB4 /* BJSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BJSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53448B81D22538F00C38AB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E53448BD1D22538F00C38AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E50D7FB022BA054900634B1B /* Closure */ = {
+			isa = PBXGroup;
+			children = (
+				E50D7FB122BA055B00634B1B /* BJClosureViewController.swift */,
+			);
+			path = Closure;
+			sourceTree = "<group>";
+		};
+		E50D7FB322BA1FCC00634B1B /* Constructor */ = {
+			isa = PBXGroup;
+			children = (
+				E50D7FB422BA1FE700634B1B /* BJConstructorViewController.swift */,
+			);
+			path = Constructor;
+			sourceTree = "<group>";
+		};
 		E53448AC1D22538F00C38AB4 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +121,8 @@
 		E53448B71D22538F00C38AB4 /* BJSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E50D7FB322BA1FCC00634B1B /* Constructor */,
+				E50D7FB022BA054900634B1B /* Closure */,
 				E5C2F93722B8FCF300F0CECE /* Delegate */,
 				E5C2F92B22B8B95D00F0CECE /* Extension */,
 				E5C2F92622B88D7A00F0CECE /* BJClassAndInstanceMethod */,
@@ -287,10 +309,12 @@
 			files = (
 				E5C6EADA22B388E500C57C52 /* ViewController.swift in Sources */,
 				E5C2F92D22B8B99300F0CECE /* BJExtensionViewController.swift in Sources */,
+				E50D7FB222BA055B00634B1B /* BJClosureViewController.swift in Sources */,
 				E5C2F92822B88EC900F0CECE /* BJClassAndInstanceViewController.swift in Sources */,
 				E5C2F92A22B8956000F0CECE /* BJMethods.swift in Sources */,
 				E53448B91D22538F00C38AB4 /* AppDelegate.swift in Sources */,
 				E5C6EAD622B3884000C57C52 /* RootViewController.swift in Sources */,
+				E50D7FB522BA1FE700634B1B /* BJConstructorViewController.swift in Sources */,
 				E5C6EADB22B388E500C57C52 /* CalcLogic.swift in Sources */,
 				E5C2F93922B8FD0300F0CECE /* BJDelegateViewController.swift in Sources */,
 			);

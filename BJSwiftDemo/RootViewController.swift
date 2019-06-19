@@ -42,6 +42,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.textLabel?.text = "5、KVC，KVO"
         } else if indexPath.row == 5 {
             cell.textLabel?.text = "6、扩展"
+        } else if indexPath.row == 6 {
+            cell.textLabel?.text = "7、闭包（类比Block）"
+        } else if indexPath.row == 7 {
+            cell.textLabel?.text = "8、构造器（类比于指定初始化函数）"
         }
         return cell
     }
@@ -64,6 +68,16 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         } else if indexPath.row == 5 {
             let vc = BJExtensionViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 6 {
+            let vc = BJClosureViewController()
+            vc.myClosure = {
+                (backStr: String) -> Void in
+                print(backStr)
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 7 {
+            let vc = BJConstructorViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
