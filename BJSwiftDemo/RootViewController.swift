@@ -48,6 +48,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.textLabel?.text = "7、构造器（类比于指定初始化函数）"
         } else if indexPath.row == 8 {
             cell.textLabel?.text = "8、类方法与实例方法"
+        } else if indexPath.row == 9 {
+            cell.textLabel?.text = "9、泛型"
         }
         return cell
     }
@@ -83,6 +85,9 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 8 {
             let vc = BJClassAndInstanceViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 9 {
+            let vc = BJGenericsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
