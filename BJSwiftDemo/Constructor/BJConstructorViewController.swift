@@ -15,6 +15,7 @@ class BJConstructorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        self.navigationItem.title = "构造器"
         
         struct fat {
             var temp: Double

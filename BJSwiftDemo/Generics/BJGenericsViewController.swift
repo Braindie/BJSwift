@@ -12,6 +12,7 @@ class BJGenericsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        self.navigationItem.title = "泛型"
         
         let btn:UIButton = UIButton.init(type: UIButton.ButtonType.custom)
         btn.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
