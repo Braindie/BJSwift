@@ -18,8 +18,11 @@ class BJArithmeticViewController: UIViewController {
 //        let array = self.twoSum(nums: [1, 2, 3], targer: 4)
 //        print(array)
         
-        let i = self.reverse(x: 123)
-        print(i)
+//        let i = self.reverse(x: 123)
+//        print(i)
+        
+        let isPa = self.isPalindrome(x: 12321)
+        print(isPa)
         
     }
     
@@ -56,6 +59,23 @@ class BJArithmeticViewController: UIViewController {
             rev = rev * 10 + pop
         }
         return rev
+    }
+    
+
+    // 回文数
+    func isPalindrome(x: Int) -> Bool {
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false
+        }
+        
+        var revertedNumber = 0
+        var xx = x
+        
+        while (xx > revertedNumber) {
+            revertedNumber = revertedNumber * 10 + xx % 10
+            xx = xx / 10
+        }
+        return xx == revertedNumber || xx == revertedNumber / 10
     }
 
 }
