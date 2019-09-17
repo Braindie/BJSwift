@@ -21,8 +21,15 @@ class BJArithmeticViewController: UIViewController {
 //        let i = self.reverse(x: 123)
 //        print(i)
         
-        let isPa = self.isPalindrome(x: 12321)
-        print(isPa)
+//        let isPa = self.isPalindrome(x: 12321)
+//        print(isPa)
+        
+//        let value = self.romanToInt(s: "I")
+//        print(value)
+        
+        let value = self.longestCommonPrefix(["abcdfghikd", "abcde", "abef"])
+        print(value)
+        
         
     }
     
@@ -76,6 +83,39 @@ class BJArithmeticViewController: UIViewController {
             xx = xx / 10
         }
         return xx == revertedNumber || xx == revertedNumber / 10
+    }
+    
+    
+    // 罗马数字转整数
+    func romanToInt(s: String) -> Int {
+        let dict: [Character : Int] = ["I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000]
+        var lastNum = 0
+        var result = 0
+        for c in s {
+            let num = dict[c]!
+            result += num
+            if num > lastNum {
+                result -= 2*lastNum
+            }
+            lastNum = num
+        }
+        return result
+    }
+    
+    func longestCommonPrefix(_ strs: [String]) -> String {
+        guard strs.count > 0 else { return "" }
+        var prefix = strs[0]
+        
+        for i in 1..<strs.count {
+            let str = strs[i]
+            while !str.hasPrefix(prefix) { // 循环
+                prefix.removeLast() // 删除最后一个字符
+                print(str+"+"+prefix)
+
+                if prefix == "" { return "" }
+            }
+        }
+        return prefix
     }
 
 }
