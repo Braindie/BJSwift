@@ -27,14 +27,16 @@ class BJArithmeticViewController: UIViewController {
 //        let value = self.romanToInt(s: "I")
 //        print(value)
         
-        let value = self.longestCommonPrefix(["abcdfghikd", "abcde", "abef"])
-        print(value)
+//        let value = self.longestCommonPrefix(["abcdfghikd", "abcde", "abef"])
+//        print(value)
         
+        let value = self.isValid("(())())")
+        print(value)
         
     }
     
     
-    // 两数之和
+    //MARK:- 1、两数之和
     func twoSum(nums: [Int], targer: Int) -> [Int]{
         var someArray = [Int]()
         for i in 0..<nums.count-1 {
@@ -50,7 +52,7 @@ class BJArithmeticViewController: UIViewController {
     }
     
     
-    // 整数反转
+    //MARK:- 7、整数反转
     func reverse(x: Int) -> Int {
         var xx = x    //Swift是静态类型的语言，也就是说编译器在编译过程中会检查出类型错误，并提示开发者尽早修正程序中存在的问题。
         var rev = 0
@@ -69,7 +71,7 @@ class BJArithmeticViewController: UIViewController {
     }
     
 
-    // 回文数
+    //MARK:- 9、回文数
     func isPalindrome(x: Int) -> Bool {
         if (x < 0 || (x % 10 == 0 && x != 0)) {
             return false
@@ -86,7 +88,7 @@ class BJArithmeticViewController: UIViewController {
     }
     
     
-    // 罗马数字转整数
+    //MARK:- 13、罗马数字转整数
     func romanToInt(s: String) -> Int {
         let dict: [Character : Int] = ["I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000]
         var lastNum = 0
@@ -102,6 +104,8 @@ class BJArithmeticViewController: UIViewController {
         return result
     }
     
+    
+    //MARK:- 14、最长公共前缀
     func longestCommonPrefix(_ strs: [String]) -> String {
         guard strs.count > 0 else { return "" }
         var prefix = strs[0]
@@ -116,6 +120,24 @@ class BJArithmeticViewController: UIViewController {
             }
         }
         return prefix
+    }
+    
+    //MARK:- 20、有效的括号
+    func isValid(_ s: String) -> Bool {
+        var stack = [Character]() // 模拟栈
+        let dict = [")":"(", "]":"[", "}":"{"] // 索引
+        
+        for c in s {
+            print(c)
+            if !dict.keys.contains(String(c)) {
+                stack.append(c) // 左括号入栈
+            }else if stack.count > 0, String( stack.last! ) == dict[String(c)] {
+                stack.removeLast() // 右括号出栈
+            } else {
+                return false
+            }
+        }
+        return stack.isEmpty
     }
 
 }
