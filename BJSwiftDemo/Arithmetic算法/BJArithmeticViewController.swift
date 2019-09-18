@@ -9,6 +9,17 @@
 import Foundation
 import UIKit
 
+public class ListNode { // 链表节点
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val: Int) {
+        self.val = val
+        self.next = nil
+    }
+}
+
+
+
 class BJArithmeticViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -30,8 +41,15 @@ class BJArithmeticViewController: UIViewController {
 //        let value = self.longestCommonPrefix(["abcdfghikd", "abcde", "abef"])
 //        print(value)
         
-        let value = self.isValid("(())())")
+//        let value = self.isValid("(())())")
+//        print(value)
+        
+        let l1 = ListNode.init(1)
+        let l2 = ListNode.init(2)
+
+        let value = self.mergeTwoLists(l1, l2)
         print(value)
+        
         
     }
     
@@ -140,4 +158,18 @@ class BJArithmeticViewController: UIViewController {
         return stack.isEmpty
     }
 
+    //MARK:- 合并两个有序列表
+    func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        if l1 == nil {
+            return l2
+        } else if l2 == nil {
+            return l1
+        } else if (l1!.val < l2!.val) {
+            l1?.next = self.mergeTwoLists(l1?.next, l2)
+            return l1
+        } else {
+            l2?.next = self.mergeTwoLists(l1, l2?.next)
+            return l2
+        }
+    }
 }
