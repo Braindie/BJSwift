@@ -44,10 +44,13 @@ class BJArithmeticViewController: UIViewController {
 //        let value = self.isValid("(())())")
 //        print(value)
         
-        let l1 = ListNode.init(1)
-        let l2 = ListNode.init(2)
-
-        let value = self.mergeTwoLists(l1, l2)
+//        let l1 = ListNode.init(1)
+//        let l2 = ListNode.init(2)
+//        let value = self.mergeTwoLists(l1, l2)
+//        print(value)
+        
+        var list = [1, 1, 2]
+        let value = self.removeDuplicates(&list)
         print(value)
         
         
@@ -158,7 +161,7 @@ class BJArithmeticViewController: UIViewController {
         return stack.isEmpty
     }
 
-    //MARK:- 合并两个有序列表
+    //MARK:- 21、合并两个有序列表
     func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         if l1 == nil {
             return l2
@@ -171,5 +174,25 @@ class BJArithmeticViewController: UIViewController {
             l2?.next = self.mergeTwoLists(l1, l2?.next)
             return l2
         }
+    }
+    
+    //MARK:- 26、删除排序数组中的重复项
+    func removeDuplicates(_ nums: inout [Int]) -> Int { // inout泛型里面有
+        if nums.count == 0 {
+            return 0
+        }
+        var i = 0
+        for (index, item) in nums.enumerated() {
+            if index == 0 {
+                continue
+            }
+            print(index)
+            if nums[i] != nums[index] {
+                i += 1
+                nums[i] = nums[index]
+            }
+        }
+        print(nums)
+        return i + 1
     }
 }
