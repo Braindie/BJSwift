@@ -49,10 +49,14 @@ class BJArithmeticViewController: UIViewController {
 //        let value = self.mergeTwoLists(l1, l2)
 //        print(value)
         
-        var list = [1, 1, 2]
-        let value = self.removeDuplicates(&list)
-        print(value)
+//        var list = [1, 1, 2]
+//        let value = self.removeDuplicates(&list)
+//        print(value)
         
+        
+        var list = [1, 1, 2,4]
+        let value = self.removeElement(&list, 1)
+        print(value)
         
     }
     
@@ -194,5 +198,17 @@ class BJArithmeticViewController: UIViewController {
         }
         print(nums)
         return i + 1
+    }
+    
+    //MARK:- 27、移除元素
+    func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+        var i = 0
+        for (index, item) in nums.enumerated() {
+            if nums[index] != val {
+                nums[i] = nums[index]
+                i += 1
+            }
+        }
+        return i
     }
 }
