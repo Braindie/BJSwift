@@ -26,36 +26,35 @@ class BJArithmeticViewController: UIViewController {
         self.view.backgroundColor = UIColor.white;
         self.navigationItem.title = "算法";
         
-//        let array = self.twoSum(nums: [1, 2, 3], targer: 4)
-//        print(array)
+//        let value = self.twoSum(nums: [1, 2, 3], targer: 4)
         
-//        let i = self.reverse(x: 123)
-//        print(i)
+//        let value = self.reverse(x: 123)
         
-//        let isPa = self.isPalindrome(x: 12321)
-//        print(isPa)
+//        let value = self.isPalindrome(x: 12321)
         
 //        let value = self.romanToInt(s: "I")
-//        print(value)
         
 //        let value = self.longestCommonPrefix(["abcdfghikd", "abcde", "abef"])
-//        print(value)
         
 //        let value = self.isValid("(())())")
-//        print(value)
         
 //        let l1 = ListNode.init(1)
 //        let l2 = ListNode.init(2)
 //        let value = self.mergeTwoLists(l1, l2)
-//        print(value)
         
 //        var list = [1, 1, 2]
 //        let value = self.removeDuplicates(&list)
-//        print(value)
         
         
-        var list = [1, 1, 2,4]
-        let value = self.removeElement(&list, 1)
+//        var list = [1, 1, 2,4]
+//        let value = self.removeElement(&list, 1)
+        
+        let value = self.searchInsert([1, 2, 3, 4], 2)
+        
+        
+        
+        
+        
         print(value)
         
     }
@@ -210,5 +209,45 @@ class BJArithmeticViewController: UIViewController {
             }
         }
         return i
+    }
+    
+    //MARK:- 28、实现strStr（）
+    func strStr(_ haystack: String, _ needle: String) -> Int {
+        var pat = haystack
+        var txt = needle
+
+        let M = haystack.count
+        let N = needle.count
+        for i in 0...M-N {
+            for j in 0...N {
+                if pat[j] != txt[j] {
+                    break
+                }
+            }
+
+        }
+    }
+    
+    //MARK:- 35、搜索插入位置
+    func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+        let len = nums.count
+        if nums[len - 1] < target {
+            return len
+        }
+        
+        var left = 0
+        var right = len - 1
+        
+        while left <= right { // 二分法
+            let mid = (left + right) / 2
+            if nums[mid] == target {
+                return mid
+            } else if nums[mid] < target {
+                left = mid + 1
+            } else {
+                right = mid - 1
+            }
+        }
+        return left
     }
 }
