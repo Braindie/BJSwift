@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// 链表
 public class ListNode { // 链表节点
     public var val: Int
     public var next: ListNode?
@@ -49,13 +50,31 @@ class BJArithmeticViewController: UIViewController {
 //        var list = [1, 1, 2,4]
 //        let value = self.removeElement(&list, 1)
         
-        let value = self.searchInsert([1, 2, 3, 4], 2)
+//        let value = self.searchInsert([1, 2, 3, 4], 2)
         
         
         
+        let one = ListNode(1)
+        let two = ListNode(1)
+        let three = ListNode(2)
+        let four = ListNode(2)
+        let five = ListNode(3)
+        let six = ListNode(4)
+        
+        one.next = two
+        two.next = three
+        three.next = four
+        four.next = five
+        five.next = six
+        
+        let value = self.deleteDuplicates(one)
+        
+        while value?.next != nil {
+            print("node val: \(value?.val)")
+        }
         
         
-        print(value)
+//        print(value)
         
     }
     
@@ -164,7 +183,7 @@ class BJArithmeticViewController: UIViewController {
         return stack.isEmpty
     }
 
-    //MARK:- 21、合并两个有序列表
+    //MARK:- 21、合并两个有序链表
     func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         if l1 == nil {
             return l2
@@ -218,14 +237,15 @@ class BJArithmeticViewController: UIViewController {
 
         let M = haystack.count
         let N = needle.count
-        for i in 0...M-N {
-            for j in 0...N {
-                if pat[j] != txt[j] {
-                    break
-                }
-            }
-
-        }
+//        for i in 0...M-N {
+//            for j in 0...N {
+//                if pat[j] != txt[j] {
+//                    break
+//                }
+//            }
+//
+//        }
+        return 1
     }
     
     //MARK:- 35、搜索插入位置
@@ -250,4 +270,18 @@ class BJArithmeticViewController: UIViewController {
         }
         return left
     }
+    
+    //MARK:- 83、删除排序链表中的重复元素
+    func deleteDuplicates(_ head: ListNode?) -> ListNode? {
+        var current = head
+        while current != nil && current?.next != nil {
+            if current!.next!.val == current!.val {
+                current!.next = current!.next!.next
+            } else {
+                current = current?.next
+            }
+        }
+        return head
+    }
+    
 }
