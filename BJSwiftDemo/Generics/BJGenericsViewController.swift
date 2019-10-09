@@ -38,7 +38,6 @@ class BJGenericsViewController: UIViewController {
         print("交换前：\(str1)、\(str2)")
         swapTwoValue(&str1, &str2)
         print("交换后：\(str1)、\(str2)")
-
     }
     
     //泛型

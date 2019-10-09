@@ -53,11 +53,11 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             if indexPath.row == 0 {
                 cell.textLabel?.text = "多态（同OC）"
             } else if indexPath.row == 1 {
-                cell.textLabel?.text = "扩展"
+                cell.textLabel?.text = "扩展（Swift没有分类了）"
             } else if indexPath.row == 2 {
                 cell.textLabel?.text = "KVC（静态语言，通过NSObject实现）"
             } else if indexPath.row == 3 {
-                cell.textLabel?.text = "闭包（类比Block）"
+                cell.textLabel?.text = "0.0"
             } else if indexPath.row == 4 {
                 cell.textLabel?.text = "构造器（类比于指定初始化函数）"
             } else if indexPath.row == 5 {
@@ -69,6 +69,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             if indexPath.row == 0 {
                 cell.textLabel?.text = "代理"
             } else if indexPath.row == 1 {
+                cell.textLabel?.text = "闭包（类比Block）"
+            } else if indexPath.row == 2 {
+                cell.textLabel?.text = "通知"
+            } else if indexPath.row == 3 {
                 cell.textLabel?.text = "KVO（OC特性，通过NSObject实现）"
             }
         }
@@ -97,14 +101,14 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             } else if indexPath.row == 2 {
-
+                let alert = UIAlertController.init(title: "提示", message: "通过OC的动态特性来实现", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
+                self.navigationController?.present(alert, animated: true, completion: nil)
+                
             } else if indexPath.row == 3 {
-                let vc = BJClosureViewController()
-                vc.myClosure = {
-                    (backStr: String) -> Void in
-                    print(backStr)
-                }
-                self.navigationController?.pushViewController(vc, animated: true)
+                let alert = UIAlertController.init(title: "提示", message: "占位的", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
+                self.navigationController?.present(alert, animated: true, completion: nil)
                 
             } else if indexPath.row == 4 {
                 let vc = BJConstructorViewController()
@@ -126,15 +130,26 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             } else if indexPath.row == 1 {
+                let vc = BJClosureViewController()
+                vc.myClosure = {
+                    (backStr: String) -> Void in
+                    print(backStr)
+                }
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else if indexPath.row == 2 {
+                let alert = UIAlertController.init(title: "提示", message: "太常见了，没写", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
+                self.navigationController?.present(alert, animated: true, completion: nil)
+                
+            } else if indexPath.row == 3 {
                 let vc = BJKVOViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
-                
             }
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50;
+        return 80;
     }
     
     //MARK: -
