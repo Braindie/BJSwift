@@ -19,6 +19,18 @@ public class ListNode { // 链表节点
     }
 }
 
+// 树
+public class TreeNode {
+     public var val: Int
+     public var left: TreeNode?
+     public var right: TreeNode?
+     public init(_ val: Int) {
+         self.val = val
+         self.left = nil
+         self.right = nil
+     }
+}
+
 
 
 class BJArithmeticViewController: UIViewController {
@@ -54,27 +66,43 @@ class BJArithmeticViewController: UIViewController {
         
         
         
-        let one = ListNode(1)
-        let two = ListNode(1)
-        let three = ListNode(2)
-        let four = ListNode(2)
-        let five = ListNode(3)
-        let six = ListNode(4)
+//        let one = ListNode(1)
+//        let two = ListNode(1)
+//        let three = ListNode(2)
+//        let four = ListNode(2)
+//        let five = ListNode(3)
+//        let six = ListNode(4)
+//
+//        one.next = two
+//        two.next = three
+//        three.next = four
+//        four.next = five
+//        five.next = six
+//
+//        let value = self.deleteDuplicates(one)
+//
+//        while value?.next != nil {
+//            print("node val: \(value?.val)")
+//        }
         
-        one.next = two
-        two.next = three
-        three.next = four
-        four.next = five
-        five.next = six
         
-        let value = self.deleteDuplicates(one)
+        let one = TreeNode(1)
+        let oneLeft = TreeNode(2)
+        let oneRight = TreeNode(3)
+        one.left = oneLeft
+        one.right = oneRight
         
-        while value?.next != nil {
-            print("node val: \(value?.val)")
-        }
+        let two = TreeNode(1)
+        let twoLeft = TreeNode(2)
+        let twoRight = TreeNode(3)
+        two.left = twoLeft
+        two.right = twoRight
         
         
-//        print(value)
+        let value = self.isSameTree(one, two)
+        
+        
+        print(value)
         
     }
     
@@ -282,6 +310,20 @@ class BJArithmeticViewController: UIViewController {
             }
         }
         return head
+    }
+    
+    //MARK:- 100、相同的树
+    func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+        if p == nil && q == nil {
+            return true
+        }
+        if p == nil || q == nil {
+            return false
+        }
+        if p?.val != q?.val {
+            return false
+        }
+        return isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right)
     }
     
 }
