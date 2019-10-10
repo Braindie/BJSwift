@@ -100,13 +100,158 @@ class BJArithmeticViewController: UIViewController {
 //
 //        let value = self.isSameTree(one, two)
         
-        let value = self.isSymmetric(one)
+//        let value = self.isSymmetric(one)
         
-        
+        let value = self.quickSorting(arr: [7,6,5,4,3,2,1])
+    
         
         print(value)
         
     }
+    //MARK:- 排序算法
+    //MARK: 冒泡排序
+    func bubbleSorting(arr: [Int]) -> Array<Int> {
+        var sortArr: [Int] = arr
+        for i in 0..<sortArr.count {
+            for j in 0..<sortArr.count-1-i {
+                if sortArr[j] > sortArr[j+1] {
+                    sortArr.swapAt(j, j+1)
+                }
+                print(sortArr)
+            }
+        }
+        return sortArr
+    }
+    
+    //MARK: 选择排序
+    func selectionSorting(arr: [Int]) -> Array<Int> {
+        var sortArr = arr
+        let n = sortArr.count
+        for i in 0..<n {
+            var minIndex = i //寻找[i, n)区间最小的值
+            for j in (i+1)..<n {
+                if sortArr[minIndex] > sortArr[j] {
+                    minIndex = j
+                }
+            }
+            sortArr.swapAt(i, minIndex)
+        }
+        return sortArr
+    }
+    
+    //MARK: 插入排序
+    func insertSorting(arr: [Int]) -> Array<Int> {
+        var sortArr = arr
+        for i in 0..<sortArr.count {
+            for j in stride(from: i, to: 0, by: -1) {
+                if sortArr[j] < sortArr[j-1] {
+                    sortArr.swapAt(j, j-1)
+                }
+            }
+        }
+        return sortArr
+    }
+    
+    //MARK: 希尔排序
+    var data: [Int] = Array()
+    func shellSorting(arr: [Int]) -> Array<Int> {
+        self.data = arr
+        let incremental = arr.count
+        recursiveShellSort(incremental: incremental) // 先递归
+        self.data = insertSorting(arr: self.data) // 插入排序
+        return self.data
+    }
+    func recursiveShellSort(incremental: Int) { // 递归
+        if incremental == 0 {
+            return
+        }
+        for index in 0..<data.count - incremental {
+            let a = data[index]
+            let b = data[index + incremental]
+            if a > b {
+                data.swapAt(index, index+incremental)
+            }
+        }
+        recursiveShellSort(incremental: incremental/2)
+    }
+    
+    //MARK: 归并排序
+    var sortArr: [Int] = Array()
+    func merageSorting(arr: [Int]) -> Array<Int> {
+        sortArr = arr
+        recursiveSort(l: 0, r: arr.count-1)
+        return sortArr
+    }
+    func recursiveSort(l: Int, r: Int) {
+        if l >= r {
+            return
+        }
+        let mid = (l + r)/2
+        print("开始")
+        print(mid)
+        recursiveSort(l: l, r: mid)
+        recursiveSort(l: mid+1, r: r)
+        print("递归结束")
+        print(mid)
+        merge(l: l, mid: mid, r: r)
+    }
+    func merge(l: Int, mid: Int, r: Int) {
+        var aux: [Int] = Array()
+        for i in l..<r+1 {
+            aux.append(sortArr[i])
+        }
+        print(aux)
+        
+        var i = l
+        var j = mid+1
+        
+        for k in l..<r+1 {
+            if i > mid {
+                sortArr[k] = aux[j-l]
+                j += 1
+            } else if j > r {
+                sortArr[k] = aux[i-l]
+                i += 1
+            } else if aux[i-l] - aux[j-l] < 0 {
+                sortArr[k] = aux[i-l]
+                i += 1
+            } else {
+                sortArr[k] = aux[j-l]
+                j += 1
+            }
+        }
+    }
+    
+    
+    //MARK: 快速排序
+    var qArr: [Int] = Array()
+    
+    func quickSorting(arr: [Int]) -> Array<Int> {
+        self.qArr = arr
+        recursiveQuickSort(l: 0, r: qArr.count-1)
+        return self.qArr
+    }
+    func recursiveQuickSort(l: Int, r: Int) {
+        if l >= r {
+            return
+        }
+        let p = partition(l: l, r: r)
+        recursiveQuickSort(l: l, r: p-1)
+        recursiveQuickSort(l: p+1, r: r)
+    }
+    func partition(l: Int, r: Int) -> Int {
+        let v = qArr[l]
+        var j = l
+        for i in l+1..<r+1 {
+            if qArr[i] < v {
+                j += 1
+            }
+        }
+        qArr.swapAt(l, j)
+        print(qArr)
+        return j
+    }
+    
     
     
     //MARK:- 1、两数之和
