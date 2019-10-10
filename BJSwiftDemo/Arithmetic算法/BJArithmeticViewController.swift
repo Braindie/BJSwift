@@ -88,18 +88,20 @@ class BJArithmeticViewController: UIViewController {
         
         let one = TreeNode(1)
         let oneLeft = TreeNode(2)
-        let oneRight = TreeNode(3)
+        let oneRight = TreeNode(2)
         one.left = oneLeft
         one.right = oneRight
+//
+//        let two = TreeNode(1)
+//        let twoLeft = TreeNode(2)
+//        let twoRight = TreeNode(3)
+//        two.left = twoLeft
+//        two.right = twoRight
+//
+//        let value = self.isSameTree(one, two)
         
-        let two = TreeNode(1)
-        let twoLeft = TreeNode(2)
-        let twoRight = TreeNode(3)
-        two.left = twoLeft
-        two.right = twoRight
+        let value = self.isSymmetric(one)
         
-        
-        let value = self.isSameTree(one, two)
         
         
         print(value)
@@ -324,6 +326,20 @@ class BJArithmeticViewController: UIViewController {
             return false
         }
         return isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right)
+    }
+    
+    //MARK:- 101、对称二叉树
+    func isSymmetric(_ root: TreeNode?) -> Bool {
+        return isMirror(root, root)
+    }
+    func isMirror(_ t1: TreeNode?, _ t2: TreeNode?) -> Bool {
+        if t1 == nil && t2 == nil {
+            return true
+        }
+        if t1 == nil || t2 == nil {
+            return false
+        }
+        return (t1?.val == t2?.val) && isMirror(t1?.left, t2?.right) && isMirror(t1?.right, t2?.left)
     }
     
 }
