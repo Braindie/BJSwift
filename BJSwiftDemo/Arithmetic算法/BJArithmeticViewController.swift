@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// 链表
+//MARK:- 链表
 public class ListNode { // 链表节点
     public var val: Int
     public var next: ListNode?
@@ -19,7 +19,7 @@ public class ListNode { // 链表节点
     }
 }
 
-// 树
+//MARK:- 树
 public class TreeNode {
      public var val: Int
      public var left: TreeNode?
@@ -32,7 +32,7 @@ public class TreeNode {
 }
 
 
-
+//MARK:-
 class BJArithmeticViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -86,11 +86,13 @@ class BJArithmeticViewController: UIViewController {
 //        }
         
         
-        let one = TreeNode(1)
-        let oneLeft = TreeNode(2)
-        let oneRight = TreeNode(2)
+        let one = TreeNode(4)
+        let oneLeft = TreeNode(7)
+        let oneRight = TreeNode(8)
+        let node = TreeNode(9)
         one.left = oneLeft
         one.right = oneRight
+        oneLeft.right = node
 //
 //        let two = TreeNode(1)
 //        let twoLeft = TreeNode(2)
@@ -102,8 +104,12 @@ class BJArithmeticViewController: UIViewController {
         
 //        let value = self.isSymmetric(one)
         
-        let value = self.quickSorting(arr: [7,6,5,4,3,2,1])
+        let value = self.quickSorting(arr: [6,5,7,1,3,2,4])
     
+//        let value = self.maxDepth(one)
+        
+//        let value = self.fibonacciSearch(list: [1,3,4,5,12,34,56,65,76,88,235,444], key: 444)
+        
         
         print(value)
         
@@ -250,6 +256,106 @@ class BJArithmeticViewController: UIViewController {
         qArr.swapAt(l, j)
         print(qArr)
         return j
+    }
+    
+    //MARK:- 查找
+    //MARK: 顺序查找
+    
+    //MARK: 二分查找
+    func binarySearch(list: [Int], key: Int) -> Int {
+        var low = 0
+        var high = list.count - 1
+        var time = 0
+        while low <= high {
+            time += 1
+            let mid = (low + high) / 2
+            if key < list[mid] {
+                high = mid - 1
+            } else if key > list[mid] {
+                low = mid + 1
+            } else {
+                print(time)
+                return mid
+            }
+        }
+        return 0
+    }
+    
+    //MARK: 插值查找
+    func insertSearch(list: [Int], key: Int) -> Int {
+        var low = 0
+        var high = list.count - 1
+        var time = 0
+        while low <= high {
+            time += 1
+            // 计算mid值是插值算法的核心代码
+            let mid = low + (high - low) * (key - list[low])/(list[high] - list[low])
+            if key < list[mid] {
+                high = mid - 1
+            } else if key > list[mid] {
+                low = mid + 1
+            } else {
+                print(time)
+                return mid
+            }
+        }
+        return 0
+    }
+    
+    //MARK: 斐波那契查找
+    func fibonacciSearch(list: [Int], key: Int) -> Int {
+        let F = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,
+                 233, 377, 610, 987, 1597, 2584, 4181, 6765,
+                 10946, 17711, 28657, 46368]
+        
+        var low = 0
+        var high = list.count - 1
+        var mid = 0
+        
+        var arr = list
+        
+        // 为了使得查找表满足斐波那契特性，在表的最后添加几个同样的值
+        // 这个值是原查找表的最后那个元素的值
+        // 添加的个数由F[k]-1-high决定
+        var k = 0
+        while high > F[k] - 1 {
+            k += 1
+        }
+        print(k)
+        var i = high
+        while F[k]-1 > i {
+            arr.append(arr[high])
+            i += 1
+        }
+        print(arr)
+        
+        // 主逻辑
+        var time = 0
+        while low <= high {
+            time += 1
+            // 防止F列表下标溢出
+            if k < 2 {
+                mid = low
+            } else {
+                mid = low + F[k-1] - 1
+            }
+            
+            if key < arr[mid] {
+                high = mid - 1
+                k -= 1
+            } else if key > arr[mid] {
+                low = mid + 1
+                k -= 2
+            } else {
+                print(time)
+                if mid <= high {
+                    return mid
+                } else {
+                    return high
+                }
+            }
+        }
+        return 0
     }
     
     
@@ -487,4 +593,14 @@ class BJArithmeticViewController: UIViewController {
         return (t1?.val == t2?.val) && isMirror(t1?.left, t2?.right) && isMirror(t1?.right, t2?.left)
     }
     
+    //MARK:- 104、二叉树的最大深度
+    func maxDepth(_ root: TreeNode?) -> Int {
+        if root == nil {
+            return 0
+        } else {
+            let left_height = maxDepth(root?.left)// 深度优先搜索
+            let right_height = maxDepth(root?.right)
+            return max(left_height, right_height) + 1
+        }
+    }
 }
