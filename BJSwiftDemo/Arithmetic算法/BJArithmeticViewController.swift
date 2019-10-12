@@ -104,9 +104,9 @@ class BJArithmeticViewController: UIViewController {
         
 //        let value = self.isSymmetric(one)
         
-        let value = self.quickSorting(arr: [6,5,7,1,3,2,4])
+//        let value = self.quickSorting(arr: [6,5,7,1,3,2,4])
     
-//        let value = self.maxDepth(one)
+        let value = levelOrderBottom(one)
         
 //        let value = self.fibonacciSearch(list: [1,3,4,5,12,34,56,65,76,88,235,444], key: 444)
         
@@ -602,5 +602,31 @@ class BJArithmeticViewController: UIViewController {
             let right_height = maxDepth(root?.right)
             return max(left_height, right_height) + 1
         }
+    }
+    
+    //MARK:- 107、二叉树的层次遍历（二）
+    func levelOrderBottom(_ root: TreeNode?) -> [[Int]] {
+        guard let r = root else { // 类似于if
+            return [[Int]]()
+        }
+        var result = [[Int]]()
+        var queue = [TreeNode]()
+        queue.append(r)
+        while queue.count > 0 {
+            let layer = Array(queue) // 队列，广度优先搜索
+            var layerVal = [Int]()
+            queue.removeAll()
+            for node in layer {
+                layerVal.append(node.val)
+                if let l = node.left {
+                    queue.append(l)
+                }
+                if let r = node.right {
+                    queue.append(r)
+                }
+            }
+            result.insert(layerVal, at: 0)
+        }
+        return result
     }
 }
