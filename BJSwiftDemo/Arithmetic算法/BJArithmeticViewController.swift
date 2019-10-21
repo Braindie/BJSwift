@@ -90,9 +90,12 @@ class BJArithmeticViewController: UIViewController {
         let oneLeft = TreeNode(7)
         let oneRight = TreeNode(8)
         let node = TreeNode(9)
+        let node2 = TreeNode(10)
+        
         one.left = oneLeft
         one.right = oneRight
         oneLeft.right = node
+        node.right = node2
 //
 //        let two = TreeNode(1)
 //        let twoLeft = TreeNode(2)
@@ -106,9 +109,11 @@ class BJArithmeticViewController: UIViewController {
         
 //        let value = self.quickSorting(arr: [6,5,7,1,3,2,4])
     
-        let value = levelOrderBottom(one)
+//        let value = levelOrderBottom(one)
         
-//        let value = self.fibonacciSearch(list: [1,3,4,5,12,34,56,65,76,88,235,444], key: 444)
+//        let value = self.sortedArrayToBST([1,3,4,5,12,34,56,65,76,88,235,444])
+        
+        let value = self.isBalanced(one)
         
         
         print(value)
@@ -628,5 +633,39 @@ class BJArithmeticViewController: UIViewController {
             result.insert(layerVal, at: 0)
         }
         return result
+    }
+    
+    //MARK:- 108、将有序数组转换为二叉搜索树
+    func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
+        return sortedArrayToBST(nums, 0, nums.count)
+    }
+    func sortedArrayToBST(_ nums: [Int], _ start: Int, _ end: Int) -> TreeNode? {
+        if start == end {
+            return nil
+        }
+        let mid = (start + end) / 2
+        let root = TreeNode(nums[mid])
+        root.left = sortedArrayToBST(nums, start, mid)
+        root.right = sortedArrayToBST(nums, mid + 1, end)
+        return root
+    }
+    
+    //MARK:- 110、平衡的二叉树
+    func isBalanced(_ root: TreeNode?) -> Bool {
+        return depth(root) != -1
+    }
+    func depth(_ root: TreeNode?) -> Int {
+        if root == nil {
+            return 0
+        }
+        let left = depth(root?.left)
+        if left == -1 {
+            return -1
+        }
+        let right = depth(root?.right)
+        if right == -1 {
+            return -1
+        }
+        return abs(left - right) < 2 ? max(left, right) + 1 : -1 // 如果超过2就退出递归了
     }
 }
