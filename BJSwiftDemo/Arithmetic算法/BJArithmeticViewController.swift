@@ -66,19 +66,19 @@ class BJArithmeticViewController: UIViewController {
         
         
         
-//        let one = ListNode(1)
-//        let two = ListNode(1)
-//        let three = ListNode(2)
-//        let four = ListNode(2)
-//        let five = ListNode(3)
-//        let six = ListNode(4)
-//
-//        one.next = two
-//        two.next = three
-//        three.next = four
-//        four.next = five
-//        five.next = six
-//
+        let one = ListNode(1)
+        let two = ListNode(1)
+        let three = ListNode(2)
+        let four = ListNode(2)
+        let five = ListNode(3)
+        let six = ListNode(4)
+
+        one.next = two
+        two.next = three
+        three.next = four
+        four.next = five
+        five.next = six
+
 //        let value = self.deleteDuplicates(one)
 //
 //        while value?.next != nil {
@@ -86,16 +86,16 @@ class BJArithmeticViewController: UIViewController {
 //        }
         
         
-        let one = TreeNode(4)
-        let oneLeft = TreeNode(7)
-        let oneRight = TreeNode(8)
-        let node = TreeNode(9)
-        let node2 = TreeNode(10)
-        
-        one.left = oneLeft
-        one.right = oneRight
-        oneLeft.right = node
-        node.right = node2
+//        let one = TreeNode(4)
+//        let oneLeft = TreeNode(7)
+//        let oneRight = TreeNode(8)
+//        let node = TreeNode(9)
+//        let node2 = TreeNode(10)
+//
+//        one.left = oneLeft
+//        one.right = oneRight
+//        oneLeft.right = node
+//        node.right = node2
 //
 //        let two = TreeNode(1)
 //        let twoLeft = TreeNode(2)
@@ -113,7 +113,7 @@ class BJArithmeticViewController: UIViewController {
         
 //        let value = self.sortedArrayToBST([1,3,4,5,12,34,56,65,76,88,235,444])
         
-        let value = self.isBalanced(one)
+        let value = self.reverseList(one)
         
         
         print(value)
@@ -667,5 +667,29 @@ class BJArithmeticViewController: UIViewController {
             return -1
         }
         return abs(left - right) < 2 ? max(left, right) + 1 : -1 // 如果超过2就退出递归了
+    }
+    
+    //MARK:- 206、反转链表
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        // 方法一：迭代
+        var prev: ListNode?
+        prev = nil
+        var curr = head
+        while curr != nil {
+            let nextTemp = curr?.next
+            curr?.next = prev
+            prev = curr
+            curr = nextTemp
+        }
+        return prev
+        
+        // 方法二：递归
+        if head == nil || head?.next == nil {
+            return head
+        }
+        let p = reverseList(head?.next)
+        head?.next?.next = head
+        head?.next = nil
+        return p
     }
 }
