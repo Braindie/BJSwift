@@ -16,8 +16,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Swift"
       
-        
         self.myTableView.delegate = self;
         self.myTableView.dataSource = self;
     }
@@ -25,7 +25,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3;
+        return 6;
     }
 
     //MARK: - delegate
@@ -35,9 +35,11 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if section == 1 {
             return 4;
         } else if section == 2 {
-            return 8;
+            return 3;
+        } else if section == 3 {
+            return 3
         } else {
-            return 0;
+            return 1;
         }
     }
     
@@ -66,14 +68,14 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.textLabel?.text = "扩展（Swift没有分类了）"
             } else if indexPath.row == 2 {
                 cell.textLabel?.text = "KVC（静态语言，通过NSObject实现）"
-            } else if indexPath.row == 3 {
-                cell.textLabel?.text = "0.0"
-            } else if indexPath.row == 4 {
-                cell.textLabel?.text = "构造器（类比于指定初始化函数）"
-            } else if indexPath.row == 5 {
-                cell.textLabel?.text = "类方法与实例方法"
-            } else if indexPath.row == 6 {
-                cell.textLabel?.text = "泛型"
+            }
+        } else if indexPath.section == 3 {
+            if indexPath.row == 0 {
+               cell.textLabel?.text = "构造器（类比于指定初始化函数）"
+            } else if indexPath.row == 1 {
+               cell.textLabel?.text = "类方法与实例方法"
+            } else if indexPath.row == 2 {
+               cell.textLabel?.text = "泛型"
             }
         }
 
@@ -127,20 +129,17 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
                 alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
                 self.navigationController?.present(alert, animated: true, completion: nil)
                 
-            } else if indexPath.row == 3 {
-                let alert = UIAlertController.init(title: "提示", message: "占位的", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
-                self.navigationController?.present(alert, animated: true, completion: nil)
-                
-            } else if indexPath.row == 4 {
+            }
+        } else if indexPath.section == 3 {
+            if indexPath.row == 0 {
                 let vc = BJConstructorViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
-            } else if indexPath.row == 5 {
+            } else if indexPath.row == 1 {
                 let vc = BJClassAndInstanceViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
-            } else if indexPath.row == 6 {
+            } else if indexPath.row == 2 {
                 let vc = BJGenericsViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
@@ -149,7 +148,35 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80;
+        return 50;
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView: UIView = UIView()
+        headerView.frame = CGRect.init(x: 0, y: 0, width: 300, height: 50)
+        headerView.backgroundColor = UIColor.groupTableViewBackground
+        let headerLabel: UILabel = UILabel.init(frame: CGRect.init(x: 15, y: 10, width: 250, height: 40))
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        headerView.addSubview(headerLabel)
+        
+        switch section {
+        case 0:
+            headerLabel.text = "算法"
+        case 1:
+            headerLabel.text = "通信方式"
+        case 2:
+            headerLabel.text = "一般语法"
+        case 3:
+            headerLabel.text = "重要语法"
+        case 4:
+            headerLabel.text = "Memory"
+        case 5:
+            headerLabel.text = "MutipleThread"
+        default:
+            headerLabel.text = ""
+        }
+        
+        return headerView
     }
     
     //MARK: -
