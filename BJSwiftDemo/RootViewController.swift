@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ClickDelegate{
+class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     
 
@@ -98,7 +98,6 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 let vc = BJDelegateViewController()
-                vc.delegate = self as ClickDelegate
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             } else if indexPath.row == 1 {
@@ -177,11 +176,6 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         return headerView
-    }
-    
-    //MARK: -
-    func click() {
-        print("收到代理事件")
     }
 }
 
