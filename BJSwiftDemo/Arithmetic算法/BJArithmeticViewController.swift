@@ -78,6 +78,9 @@ class BJArithmeticViewController: UIViewController {
         three.next = four
         four.next = five
         five.next = six
+        
+//        let value = self.hasCycle(head: one)
+        
 
 //        let value = self.deleteDuplicates(one)
 //
@@ -113,7 +116,10 @@ class BJArithmeticViewController: UIViewController {
         
 //        let value = self.sortedArrayToBST([1,3,4,5,12,34,56,65,76,88,235,444])
         
-        let value = self.reverseList(one)
+//        let value = self.reverseList(one)
+        
+        let value = self.firstUniqChar("abcdabc")
+        
         
         
         print(value)
@@ -650,6 +656,26 @@ class BJArithmeticViewController: UIViewController {
         return root
     }
     
+    //MARK:- 141、环形链表
+    func hasCycle(head: ListNode) -> Bool {
+        // 方法一：哈希表、检查一个结点此前是否被访问过来判断链表是否是环形链表
+        
+        // 方法二：双指针
+        if head == nil || head.next == nil {
+            return false
+        }
+        var slow: ListNode! = head
+        var fast = head.next
+        while slow !== fast {
+            if fast == nil || fast?.next == nil {
+                return false
+            }
+            slow = slow.next
+            fast = fast?.next?.next
+        }
+        return true
+    }
+    
     //MARK:- 110、平衡的二叉树
     func isBalanced(_ root: TreeNode?) -> Bool {
         return depth(root) != -1
@@ -691,5 +717,22 @@ class BJArithmeticViewController: UIViewController {
         head?.next?.next = head
         head?.next = nil
         return p
+    }
+    
+    //MARK:- 387、字符串中的第一个唯一字符
+    func firstUniqChar(_ s: String) -> Int {
+        var set = Set<Character>()
+        var index = 0
+        for char in s {
+            if !set.contains(char) {// 如果重复了就不进去判断了
+                set.insert(char)
+                // 最后的char角标是否等于当前循环的char的角标
+                if s.lastIndex(of: char)! == s.index(s.startIndex, offsetBy: index) {
+                    return index
+                }
+            }
+            index += 1
+        }
+        return -1
     }
 }

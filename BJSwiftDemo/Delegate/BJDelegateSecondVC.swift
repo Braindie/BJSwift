@@ -14,7 +14,7 @@ protocol ModelObjectDelegate: class {
 }
 
 class ModelObject {
-    var delegate: ModelObjectDelegate?
+    weak var delegate: ModelObjectDelegate?
 }
 
 class BJDelegateSecondVC: UIViewController, ModelObjectDelegate {
