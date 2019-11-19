@@ -71,7 +71,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         } else if indexPath.section == 3 {
             if indexPath.row == 0 {
-               cell.textLabel?.text = "构造器（类比于指定初始化函数）"
+               cell.textLabel?.text = "构造器（初始化函数）"
             } else if indexPath.row == 1 {
                cell.textLabel?.text = "类方法与实例方法"
             } else if indexPath.row == 2 {
