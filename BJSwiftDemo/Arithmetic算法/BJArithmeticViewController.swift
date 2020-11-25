@@ -125,7 +125,7 @@ class BJArithmeticViewController: UIViewController {
         print(value)
         
     }
-    //MARK:- 排序算法
+    //MARK:- 《《《---排序算法---》》》
     //MARK: 冒泡排序
     func bubbleSorting(arr: [Int]) -> Array<Int> {
         var sortArr: [Int] = arr
@@ -269,7 +269,7 @@ class BJArithmeticViewController: UIViewController {
         return j
     }
     
-    //MARK:- 查找
+    //MARK:- 《《《---查找算法---》》》
     //MARK: 顺序查找
     
     //MARK: 二分查找
@@ -370,8 +370,8 @@ class BJArithmeticViewController: UIViewController {
     }
     
     
-    
-    //MARK:- 1、两数之和
+    //MARK:- 《《《---LeetCode---》》》
+    //MARK: 1、两数之和
     func twoSum(nums: [Int], targer: Int) -> [Int]{
         var someArray = [Int]()
         for i in 0..<nums.count-1 {
@@ -387,7 +387,7 @@ class BJArithmeticViewController: UIViewController {
     }
     
     
-    //MARK:- 7、整数反转
+    //MARK: 7、整数反转
     func reverse(x: Int) -> Int {
         var xx = x    //Swift是静态类型的语言，也就是说编译器在编译过程中会检查出类型错误，并提示开发者尽早修正程序中存在的问题。
         var rev = 0
@@ -406,7 +406,7 @@ class BJArithmeticViewController: UIViewController {
     }
     
 
-    //MARK:- 9、回文数
+    //MARK: 9、回文数
     func isPalindrome(x: Int) -> Bool {
         if (x < 0 || (x % 10 == 0 && x != 0)) {
             return false
@@ -423,7 +423,7 @@ class BJArithmeticViewController: UIViewController {
     }
     
     
-    //MARK:- 13、罗马数字转整数
+    //MARK: 13、罗马数字转整数
     func romanToInt(s: String) -> Int {
         let dict: [Character : Int] = ["I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000]
         var lastNum = 0
@@ -440,7 +440,7 @@ class BJArithmeticViewController: UIViewController {
     }
     
     
-    //MARK:- 14、最长公共前缀
+    //MARK: 14、最长公共前缀
     func longestCommonPrefix(_ strs: [String]) -> String {
         guard strs.count > 0 else { return "" }
         var prefix = strs[0]
@@ -457,7 +457,7 @@ class BJArithmeticViewController: UIViewController {
         return prefix
     }
     
-    //MARK:- 20、有效的括号
+    //MARK: 20、有效的括号
     func isValid(_ s: String) -> Bool {
         var stack = [Character]() // 模拟栈
         let dict = [")":"(", "]":"[", "}":"{"] // 索引
@@ -475,7 +475,7 @@ class BJArithmeticViewController: UIViewController {
         return stack.isEmpty
     }
 
-    //MARK:- 21、合并两个有序链表
+    //MARK: 21、合并两个有序链表
     func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         if l1 == nil {
             return l2
@@ -490,7 +490,7 @@ class BJArithmeticViewController: UIViewController {
         }
     }
     
-    //MARK:- 26、删除排序数组中的重复项
+    //MARK: 26、删除排序数组中的重复项
     func removeDuplicates(_ nums: inout [Int]) -> Int { // inout泛型里面有
         if nums.count == 0 {
             return 0
@@ -510,7 +510,7 @@ class BJArithmeticViewController: UIViewController {
         return i + 1
     }
     
-    //MARK:- 27、移除元素
+    //MARK: 27、移除元素
     func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
         var i = 0
         for (index, item) in nums.enumerated() {
@@ -522,7 +522,7 @@ class BJArithmeticViewController: UIViewController {
         return i
     }
     
-    //MARK:- 28、实现strStr（）
+    //MARK: 28、实现strStr（）
     func strStr(_ haystack: String, _ needle: String) -> Int {
         var pat = haystack
         var txt = needle
@@ -540,7 +540,7 @@ class BJArithmeticViewController: UIViewController {
         return 1
     }
     
-    //MARK:- 35、搜索插入位置
+    //MARK: 35、搜索插入位置
     func searchInsert(_ nums: [Int], _ target: Int) -> Int {
         let len = nums.count
         if nums[len - 1] < target {
@@ -563,7 +563,7 @@ class BJArithmeticViewController: UIViewController {
         return left
     }
     
-    //MARK:- 83、删除排序链表中的重复元素
+    //MARK: 83、删除排序链表中的重复元素
     func deleteDuplicates(_ head: ListNode?) -> ListNode? {
         var current = head
         while current != nil && current?.next != nil {
@@ -576,7 +576,7 @@ class BJArithmeticViewController: UIViewController {
         return head
     }
     
-    //MARK:- 100、相同的树
+    //MARK: 100、相同的树
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
         if p == nil && q == nil {
             return true
@@ -590,7 +590,7 @@ class BJArithmeticViewController: UIViewController {
         return isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right)
     }
     
-    //MARK:- 101、对称二叉树
+    //MARK: 101、对称二叉树
     func isSymmetric(_ root: TreeNode?) -> Bool {
         return isMirror(root, root)
     }
@@ -604,7 +604,7 @@ class BJArithmeticViewController: UIViewController {
         return (t1?.val == t2?.val) && isMirror(t1?.left, t2?.right) && isMirror(t1?.right, t2?.left)
     }
     
-    //MARK:- 104、二叉树的最大深度
+    //MARK: 104、二叉树的最大深度
     func maxDepth(_ root: TreeNode?) -> Int {
         if root == nil {
             return 0
@@ -615,7 +615,7 @@ class BJArithmeticViewController: UIViewController {
         }
     }
     
-    //MARK:- 107、二叉树的层次遍历（二）
+    //MARK: 107、二叉树的层次遍历（二）
     func levelOrderBottom(_ root: TreeNode?) -> [[Int]] {
         guard let r = root else { // 类似于if
             return [[Int]]()
@@ -641,7 +641,7 @@ class BJArithmeticViewController: UIViewController {
         return result
     }
     
-    //MARK:- 108、将有序数组转换为二叉搜索树
+    //MARK: 108、将有序数组转换为二叉搜索树
     func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
         return sortedArrayToBST(nums, 0, nums.count)
     }
@@ -656,7 +656,7 @@ class BJArithmeticViewController: UIViewController {
         return root
     }
     
-    //MARK:- 141、环形链表
+    //MARK: 141、环形链表
     func hasCycle(head: ListNode) -> Bool {
         // 方法一：哈希表、检查一个结点此前是否被访问过来判断链表是否是环形链表
         
@@ -676,7 +676,7 @@ class BJArithmeticViewController: UIViewController {
         return true
     }
     
-    //MARK:- 110、平衡的二叉树
+    //MARK: 110、平衡的二叉树
     func isBalanced(_ root: TreeNode?) -> Bool {
         return depth(root) != -1
     }
@@ -695,7 +695,7 @@ class BJArithmeticViewController: UIViewController {
         return abs(left - right) < 2 ? max(left, right) + 1 : -1 // 如果超过2就退出递归了
     }
     
-    //MARK:- 206、反转链表
+    //MARK: 206、反转链表
     func reverseList(_ head: ListNode?) -> ListNode? {
         // 方法一：迭代
         var prev: ListNode?
@@ -719,7 +719,7 @@ class BJArithmeticViewController: UIViewController {
         return p
     }
     
-    //MARK:- 387、字符串中的第一个唯一字符
+    //MARK: 387、字符串中的第一个唯一字符
     func firstUniqChar(_ s: String) -> Int {
         var set = Set<Character>()
         var index = 0
