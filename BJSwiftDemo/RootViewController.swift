@@ -33,13 +33,13 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         if section == 0 {
             return 2;
         } else if section == 1 {
-            return 4;
-        } else if section == 2 {
             return 3;
+        } else if section == 2 {
+            return 5;
         } else if section == 3 {
-            return 3
+            return 0
         } else {
-            return 1;
+            return 0;
         }
     }
     
@@ -47,35 +47,27 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell: UITableViewCell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell.textLabel?.text = "算法"
-            } else if indexPath.row == 1 {
-                cell.textLabel?.text = "计算器"
+                cell.textLabel?.text = ""
             }
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 cell.textLabel?.text = "代理"
             } else if indexPath.row == 1 {
-                cell.textLabel?.text = "闭包（类比Block）"
+                cell.textLabel?.text = "闭包"
             } else if indexPath.row == 2 {
-                cell.textLabel?.text = "通知"
-            } else if indexPath.row == 3 {
                 cell.textLabel?.text = "KVO（OC特性，通过NSObject实现）"
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
-                cell.textLabel?.text = "多态（同OC）"
-            } else if indexPath.row == 1 {
                 cell.textLabel?.text = "扩展（Swift没有分类了）"
-            } else if indexPath.row == 2 {
-                cell.textLabel?.text = "KVC（静态语言，通过NSObject实现）"
-            }
-        } else if indexPath.section == 3 {
-            if indexPath.row == 0 {
-               cell.textLabel?.text = "构造器（初始化函数）"
             } else if indexPath.row == 1 {
-               cell.textLabel?.text = "类方法与实例方法"
+                cell.textLabel?.text = "KVC（静态语言，通过NSObject实现）"
             } else if indexPath.row == 2 {
-               cell.textLabel?.text = "泛型"
+                cell.textLabel?.text = "构造器（初始化函数）"
+            } else if indexPath.row == 3 {
+                cell.textLabel?.text = "类方法与实例方法"
+            } else if indexPath.row == 4 {
+                cell.textLabel?.text = "泛型"
             }
         }
 
@@ -86,14 +78,13 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                let vc = BJArithmeticViewController()
+                let vc = BJLeetCodeViewController()
+//                let vc = BJArithmeticViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
-                
             } else if indexPath.row == 1 {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "ViewController")
                 self.navigationController?.pushViewController(vc, animated: true)
-                
             }
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
@@ -108,69 +99,57 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if indexPath.row == 2 {
-                let alert = UIAlertController.init(title: "提示", message: "和OC差不多，没写", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
-                self.navigationController?.present(alert, animated: true, completion: nil)
-                
-            } else if indexPath.row == 3 {
                 let vc = BJKVOViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 0 {
-                
-            } else if indexPath.row == 1 {
                 let vc = BJExtensionViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
-                
+            } else if indexPath.row == 1 {
+
             } else if indexPath.row == 2 {
-                let alert = UIAlertController.init(title: "提示", message: "通过OC的动态特性来实现", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
-                self.navigationController?.present(alert, animated: true, completion: nil)
-                
-            }
-        } else if indexPath.section == 3 {
-            if indexPath.row == 0 {
                 let vc = BJConstructorViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
-                
-            } else if indexPath.row == 1 {
+            } else if indexPath.row == 3 {
                 let vc = BJClassAndInstanceViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
-                
-            } else if indexPath.row == 2 {
+            } else if indexPath.row == 3 {
                 let vc = BJGenericsViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
-                
             }
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 30;
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50;
+        return 20;
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: UIView = UIView()
         headerView.frame = CGRect.init(x: 0, y: 0, width: 300, height: 50)
         headerView.backgroundColor = UIColor.groupTableViewBackground
-        let headerLabel: UILabel = UILabel.init(frame: CGRect.init(x: 15, y: 10, width: 250, height: 40))
+        let headerLabel: UILabel = UILabel.init(frame: CGRect.init(x: 15, y: 10, width: 250, height: 20))
         headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
         headerView.addSubview(headerLabel)
         
         switch section {
         case 0:
-            headerLabel.text = "算法"
+            headerLabel.text = ""
         case 1:
-            headerLabel.text = "通信方式"
+            headerLabel.text = ""
         case 2:
-            headerLabel.text = "一般语法"
+            headerLabel.text = ""
         case 3:
-            headerLabel.text = "重要语法"
+            headerLabel.text = ""
         case 4:
-            headerLabel.text = "Memory"
+            headerLabel.text = ""
         case 5:
-            headerLabel.text = "MutipleThread"
+            headerLabel.text = ""
         default:
             headerLabel.text = ""
         }

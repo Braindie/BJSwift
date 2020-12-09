@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E50D7FB222BA055B00634B1B /* BJClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D7FB122BA055B00634B1B /* BJClosureViewController.swift */; };
-		E50D7FB522BA1FE700634B1B /* BJConstructorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D7FB422BA1FE700634B1B /* BJConstructorViewController.swift */; };
-		E50D7FB822BA2E5E00634B1B /* BJKVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D7FB722BA2E5E00634B1B /* BJKVOViewController.swift */; };
-		E50D7FBD22BA3CD900634B1B /* BJGenericsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50D7FBC22BA3CD900634B1B /* BJGenericsViewController.swift */; };
+		A4E9FF522580F45E00888263 /* BJArithmeticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF512580F45E00888263 /* BJArithmeticViewController.swift */; };
+		A4E9FF6C2580FD4B00888263 /* BJGenericsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF582580FD4B00888263 /* BJGenericsViewController.swift */; };
+		A4E9FF6D2580FD4B00888263 /* BJExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF5A2580FD4B00888263 /* BJExtensionViewController.swift */; };
+		A4E9FF6E2580FD4B00888263 /* BJMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF5C2580FD4B00888263 /* BJMethods.swift */; };
+		A4E9FF6F2580FD4B00888263 /* BJClassAndInstanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF5D2580FD4B00888263 /* BJClassAndInstanceViewController.swift */; };
+		A4E9FF702580FD4B00888263 /* BJConstructorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF5F2580FD4B00888263 /* BJConstructorViewController.swift */; };
+		A4E9FF712580FD4B00888263 /* BJClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF622580FD4B00888263 /* BJClosureViewController.swift */; };
+		A4E9FF722580FD4B00888263 /* BJKVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF642580FD4B00888263 /* BJKVOViewController.swift */; };
+		A4E9FF732580FD4B00888263 /* BJDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF662580FD4B00888263 /* BJDelegateViewController.swift */; };
+		A4E9FF742580FD4B00888263 /* BJDelegateSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF672580FD4B00888263 /* BJDelegateSecondVC.swift */; };
+		A4E9FF752580FD4B00888263 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF6A2580FD4B00888263 /* ViewController.swift */; };
+		A4E9FF762580FD4B00888263 /* CalcLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF6B2580FD4B00888263 /* CalcLogic.swift */; };
+		A4E9FF7E2580FF6800888263 /* BJLeetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9FF7D2580FF6800888263 /* BJLeetCodeViewController.swift */; };
 		E53448B91D22538F00C38AB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53448B81D22538F00C38AB4 /* AppDelegate.swift */; };
 		E53448BE1D22538F00C38AB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53448BC1D22538F00C38AB4 /* Main.storyboard */; };
 		E53448C01D22538F00C38AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53448BF1D22538F00C38AB4 /* Assets.xcassets */; };
 		E53448C31D22538F00C38AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53448C11D22538F00C38AB4 /* LaunchScreen.storyboard */; };
-		E56180FB237C154300A316C8 /* BJDelegateSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56180FA237C154300A316C8 /* BJDelegateSecondVC.swift */; };
-		E5A3F60F23263DB900044BCA /* BJArithmeticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3F60E23263DB900044BCA /* BJArithmeticViewController.swift */; };
-		E5C2F92822B88EC900F0CECE /* BJClassAndInstanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2F92722B88EC900F0CECE /* BJClassAndInstanceViewController.swift */; };
-		E5C2F92A22B8956000F0CECE /* BJMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2F92922B8956000F0CECE /* BJMethods.swift */; };
-		E5C2F92D22B8B99300F0CECE /* BJExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2F92C22B8B99300F0CECE /* BJExtensionViewController.swift */; };
-		E5C2F93922B8FD0300F0CECE /* BJDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2F93822B8FD0300F0CECE /* BJDelegateViewController.swift */; };
 		E5C6EAD622B3884000C57C52 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6EAD522B3884000C57C52 /* RootViewController.swift */; };
-		E5C6EADA22B388E500C57C52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6EAD822B388E500C57C52 /* ViewController.swift */; };
-		E5C6EADB22B388E500C57C52 /* CalcLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6EAD922B388E500C57C52 /* CalcLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +45,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E50D7FB122BA055B00634B1B /* BJClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJClosureViewController.swift; sourceTree = "<group>"; };
-		E50D7FB422BA1FE700634B1B /* BJConstructorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJConstructorViewController.swift; sourceTree = "<group>"; };
-		E50D7FB722BA2E5E00634B1B /* BJKVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJKVOViewController.swift; sourceTree = "<group>"; };
-		E50D7FBC22BA3CD900634B1B /* BJGenericsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJGenericsViewController.swift; sourceTree = "<group>"; };
+		A4E9FF512580F45E00888263 /* BJArithmeticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJArithmeticViewController.swift; sourceTree = "<group>"; };
+		A4E9FF582580FD4B00888263 /* BJGenericsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJGenericsViewController.swift; sourceTree = "<group>"; };
+		A4E9FF5A2580FD4B00888263 /* BJExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJExtensionViewController.swift; sourceTree = "<group>"; };
+		A4E9FF5C2580FD4B00888263 /* BJMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJMethods.swift; sourceTree = "<group>"; };
+		A4E9FF5D2580FD4B00888263 /* BJClassAndInstanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJClassAndInstanceViewController.swift; sourceTree = "<group>"; };
+		A4E9FF5F2580FD4B00888263 /* BJConstructorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJConstructorViewController.swift; sourceTree = "<group>"; };
+		A4E9FF622580FD4B00888263 /* BJClosureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJClosureViewController.swift; sourceTree = "<group>"; };
+		A4E9FF642580FD4B00888263 /* BJKVOViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJKVOViewController.swift; sourceTree = "<group>"; };
+		A4E9FF662580FD4B00888263 /* BJDelegateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJDelegateViewController.swift; sourceTree = "<group>"; };
+		A4E9FF672580FD4B00888263 /* BJDelegateSecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJDelegateSecondVC.swift; sourceTree = "<group>"; };
+		A4E9FF6A2580FD4B00888263 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A4E9FF6B2580FD4B00888263 /* CalcLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcLogic.swift; sourceTree = "<group>"; };
+		A4E9FF7D2580FF6800888263 /* BJLeetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJLeetCodeViewController.swift; sourceTree = "<group>"; };
 		E53448B51D22538F00C38AB4 /* BJSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BJSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53448B81D22538F00C38AB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E53448BD1D22538F00C38AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,15 +66,7 @@
 		E53448C41D22538F00C38AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53448C91D22538F00C38AB4 /* BJSwiftDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BJSwiftDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53448D41D22538F00C38AB4 /* BJSwiftDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BJSwiftDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E56180FA237C154300A316C8 /* BJDelegateSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJDelegateSecondVC.swift; sourceTree = "<group>"; };
-		E5A3F60E23263DB900044BCA /* BJArithmeticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJArithmeticViewController.swift; sourceTree = "<group>"; };
-		E5C2F92722B88EC900F0CECE /* BJClassAndInstanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJClassAndInstanceViewController.swift; sourceTree = "<group>"; };
-		E5C2F92922B8956000F0CECE /* BJMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJMethods.swift; sourceTree = "<group>"; };
-		E5C2F92C22B8B99300F0CECE /* BJExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJExtensionViewController.swift; sourceTree = "<group>"; };
-		E5C2F93822B8FD0300F0CECE /* BJDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJDelegateViewController.swift; sourceTree = "<group>"; };
 		E5C6EAD522B3884000C57C52 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		E5C6EAD822B388E500C57C52 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E5C6EAD922B388E500C57C52 /* CalcLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,36 +94,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E50D7FB022BA054900634B1B /* Closure */ = {
+		A4E9FF502580F45E00888263 /* Arithmetic */ = {
 			isa = PBXGroup;
 			children = (
-				E50D7FB122BA055B00634B1B /* BJClosureViewController.swift */,
+				A4E9FF512580F45E00888263 /* BJArithmeticViewController.swift */,
+				A4E9FF7D2580FF6800888263 /* BJLeetCodeViewController.swift */,
 			);
-			path = Closure;
+			path = Arithmetic;
 			sourceTree = "<group>";
 		};
-		E50D7FB322BA1FCC00634B1B /* Constructor */ = {
+		A4E9FF562580FD4B00888263 /* Basics */ = {
 			isa = PBXGroup;
 			children = (
-				E50D7FB422BA1FE700634B1B /* BJConstructorViewController.swift */,
+				A4E9FF592580FD4B00888263 /* Extension */,
+				A4E9FF5E2580FD4B00888263 /* Constructor */,
+				A4E9FF572580FD4B00888263 /* Generics */,
+				A4E9FF5B2580FD4B00888263 /* BJClassAndInstanceMethod */,
+			);
+			path = Basics;
+			sourceTree = "<group>";
+		};
+		A4E9FF572580FD4B00888263 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9FF582580FD4B00888263 /* BJGenericsViewController.swift */,
+			);
+			path = Generics;
+			sourceTree = "<group>";
+		};
+		A4E9FF592580FD4B00888263 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9FF5A2580FD4B00888263 /* BJExtensionViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A4E9FF5B2580FD4B00888263 /* BJClassAndInstanceMethod */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9FF5D2580FD4B00888263 /* BJClassAndInstanceViewController.swift */,
+				A4E9FF5C2580FD4B00888263 /* BJMethods.swift */,
+			);
+			path = BJClassAndInstanceMethod;
+			sourceTree = "<group>";
+		};
+		A4E9FF5E2580FD4B00888263 /* Constructor */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9FF5F2580FD4B00888263 /* BJConstructorViewController.swift */,
 			);
 			path = Constructor;
 			sourceTree = "<group>";
 		};
-		E50D7FB622BA2E5000634B1B /* KVO */ = {
+		A4E9FF602580FD4B00888263 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				E50D7FB722BA2E5E00634B1B /* BJKVOViewController.swift */,
+				A4E9FF652580FD4B00888263 /* Delegate */,
+				A4E9FF612580FD4B00888263 /* Closure */,
+				A4E9FF632580FD4B00888263 /* KVO */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		A4E9FF612580FD4B00888263 /* Closure */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9FF622580FD4B00888263 /* BJClosureViewController.swift */,
+			);
+			path = Closure;
+			sourceTree = "<group>";
+		};
+		A4E9FF632580FD4B00888263 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9FF642580FD4B00888263 /* BJKVOViewController.swift */,
 			);
 			path = KVO;
 			sourceTree = "<group>";
 		};
-		E50D7FBB22BA3CC800634B1B /* Generics */ = {
+		A4E9FF652580FD4B00888263 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				E50D7FBC22BA3CD900634B1B /* BJGenericsViewController.swift */,
+				A4E9FF662580FD4B00888263 /* BJDelegateViewController.swift */,
+				A4E9FF672580FD4B00888263 /* BJDelegateSecondVC.swift */,
 			);
-			path = Generics;
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		A4E9FF682580FD4B00888263 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9FF692580FD4B00888263 /* CalcLogic */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		A4E9FF692580FD4B00888263 /* CalcLogic */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9FF6A2580FD4B00888263 /* ViewController.swift */,
+				A4E9FF6B2580FD4B00888263 /* CalcLogic.swift */,
+			);
+			path = CalcLogic;
 			sourceTree = "<group>";
 		};
 		E53448AC1D22538F00C38AB4 = {
@@ -145,15 +220,10 @@
 		E53448B71D22538F00C38AB4 /* BJSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E5A3F60D23263D9700044BCA /* Arithmetic算法 */,
-				E50D7FBB22BA3CC800634B1B /* Generics */,
-				E50D7FB622BA2E5000634B1B /* KVO */,
-				E50D7FB322BA1FCC00634B1B /* Constructor */,
-				E50D7FB022BA054900634B1B /* Closure */,
-				E5C2F93722B8FCF300F0CECE /* Delegate */,
-				E5C2F92B22B8B95D00F0CECE /* Extension */,
-				E5C2F92622B88D7A00F0CECE /* BJClassAndInstanceMethod */,
-				E5C6EAD722B388E500C57C52 /* CalcLogic */,
+				A4E9FF502580F45E00888263 /* Arithmetic */,
+				A4E9FF602580FD4B00888263 /* Messages */,
+				A4E9FF562580FD4B00888263 /* Basics */,
+				A4E9FF682580FD4B00888263 /* Others */,
 				E53448B81D22538F00C38AB4 /* AppDelegate.swift */,
 				E5C6EAD522B3884000C57C52 /* RootViewController.swift */,
 				E53448BC1D22538F00C38AB4 /* Main.storyboard */,
@@ -162,49 +232,6 @@
 				E53448C41D22538F00C38AB4 /* Info.plist */,
 			);
 			path = BJSwiftDemo;
-			sourceTree = "<group>";
-		};
-		E5A3F60D23263D9700044BCA /* Arithmetic算法 */ = {
-			isa = PBXGroup;
-			children = (
-				E5A3F60E23263DB900044BCA /* BJArithmeticViewController.swift */,
-			);
-			path = "Arithmetic算法";
-			sourceTree = "<group>";
-		};
-		E5C2F92622B88D7A00F0CECE /* BJClassAndInstanceMethod */ = {
-			isa = PBXGroup;
-			children = (
-				E5C2F92722B88EC900F0CECE /* BJClassAndInstanceViewController.swift */,
-				E5C2F92922B8956000F0CECE /* BJMethods.swift */,
-			);
-			path = BJClassAndInstanceMethod;
-			sourceTree = "<group>";
-		};
-		E5C2F92B22B8B95D00F0CECE /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				E5C2F92C22B8B99300F0CECE /* BJExtensionViewController.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		E5C2F93722B8FCF300F0CECE /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				E5C2F93822B8FD0300F0CECE /* BJDelegateViewController.swift */,
-				E56180FA237C154300A316C8 /* BJDelegateSecondVC.swift */,
-			);
-			path = Delegate;
-			sourceTree = "<group>";
-		};
-		E5C6EAD722B388E500C57C52 /* CalcLogic */ = {
-			isa = PBXGroup;
-			children = (
-				E5C6EAD822B388E500C57C52 /* ViewController.swift */,
-				E5C6EAD922B388E500C57C52 /* CalcLogic.swift */,
-			);
-			path = CalcLogic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,20 +370,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E50D7FBD22BA3CD900634B1B /* BJGenericsViewController.swift in Sources */,
-				E5A3F60F23263DB900044BCA /* BJArithmeticViewController.swift in Sources */,
-				E5C6EADA22B388E500C57C52 /* ViewController.swift in Sources */,
-				E5C2F92D22B8B99300F0CECE /* BJExtensionViewController.swift in Sources */,
-				E50D7FB222BA055B00634B1B /* BJClosureViewController.swift in Sources */,
-				E5C2F92822B88EC900F0CECE /* BJClassAndInstanceViewController.swift in Sources */,
-				E5C2F92A22B8956000F0CECE /* BJMethods.swift in Sources */,
+				A4E9FF6C2580FD4B00888263 /* BJGenericsViewController.swift in Sources */,
+				A4E9FF762580FD4B00888263 /* CalcLogic.swift in Sources */,
+				A4E9FF522580F45E00888263 /* BJArithmeticViewController.swift in Sources */,
+				A4E9FF712580FD4B00888263 /* BJClosureViewController.swift in Sources */,
+				A4E9FF742580FD4B00888263 /* BJDelegateSecondVC.swift in Sources */,
+				A4E9FF6E2580FD4B00888263 /* BJMethods.swift in Sources */,
+				A4E9FF6D2580FD4B00888263 /* BJExtensionViewController.swift in Sources */,
+				A4E9FF6F2580FD4B00888263 /* BJClassAndInstanceViewController.swift in Sources */,
 				E53448B91D22538F00C38AB4 /* AppDelegate.swift in Sources */,
-				E50D7FB822BA2E5E00634B1B /* BJKVOViewController.swift in Sources */,
-				E56180FB237C154300A316C8 /* BJDelegateSecondVC.swift in Sources */,
+				A4E9FF752580FD4B00888263 /* ViewController.swift in Sources */,
+				A4E9FF732580FD4B00888263 /* BJDelegateViewController.swift in Sources */,
 				E5C6EAD622B3884000C57C52 /* RootViewController.swift in Sources */,
-				E50D7FB522BA1FE700634B1B /* BJConstructorViewController.swift in Sources */,
-				E5C6EADB22B388E500C57C52 /* CalcLogic.swift in Sources */,
-				E5C2F93922B8FD0300F0CECE /* BJDelegateViewController.swift in Sources */,
+				A4E9FF702580FD4B00888263 /* BJConstructorViewController.swift in Sources */,
+				A4E9FF7E2580FF6800888263 /* BJLeetCodeViewController.swift in Sources */,
+				A4E9FF722580FD4B00888263 /* BJKVOViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
