@@ -37,79 +37,14 @@ class BJArithmeticViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         self.view.backgroundColor = UIColor.white;
-        
-//        let value = self.twoSum(nums: [1, 2, 3], targer: 4)
-        
-//        let value = self.reverse(x: 123)
-        
-//        let value = self.isPalindrome(x: 12321)
-        
-//        let value = self.romanToInt(s: "I")
-        
-//        let value = self.longestCommonPrefix(["abcdfghikd", "abcde", "abef"])
-        
-//        let value = self.isValid("(())())")
-        
-//        let l1 = ListNode.init(1)
-//        let l2 = ListNode.init(2)
-//        let value = self.mergeTwoLists(l1, l2)
-        
-//        var list = [1, 1, 2]
-//        let value = self.removeDuplicates(&list)
-        
-        
-//        var list = [1, 1, 2,4]
-//        let value = self.removeElement(&list, 1)
-        
-//        let value = self.searchInsert([1, 2, 3, 4], 2)
-        
-        
-        
-        let one = ListNode(1)
-        let two = ListNode(1)
-        let three = ListNode(2)
-        let four = ListNode(2)
-        let five = ListNode(3)
-        let six = ListNode(4)
 
-        one.next = two
-        two.next = three
-        three.next = four
-        four.next = five
-        five.next = six
-        
-//        let value = self.hasCycle(head: one)
-        
-
-//        let value = self.deleteDuplicates(one)
-//
-//        while value?.next != nil {
-//            print("node val: \(value?.val)")
-//        }
-        
-        
-//        let one = TreeNode(4)
-//        let oneLeft = TreeNode(7)
-//        let oneRight = TreeNode(8)
-//        let node = TreeNode(9)
-//        let node2 = TreeNode(10)
-//
-//        one.left = oneLeft
-//        one.right = oneRight
-//        oneLeft.right = node
-//        node.right = node2
-//
-//        let two = TreeNode(1)
-//        let twoLeft = TreeNode(2)
-//        let twoRight = TreeNode(3)
-//        two.left = twoLeft
 //        two.right = twoRight
 //
 //        let value = self.isSameTree(one, two)
         
 //        let value = self.isSymmetric(one)
         
-//        let value = self.quickSorting(arr: [6,5,7,1,3,2,4])
+        let value = self.quickSorting(arr: [6,5,7,1,3,2,4])
     
 //        let value = levelOrderBottom(one)
         
@@ -120,24 +55,64 @@ class BJArithmeticViewController: UIViewController {
 //        let value = self.firstUniqChar("abcdabc")
         
         
-        
-//        print(value)
-        
+        print("结果：",value)
     }
-    //MARK:- 《《《---排序算法---》》》
+    
+    
+    
+    //MARK: - 排序
+    
+    //MARK: -
     //MARK: 冒泡排序
     func bubbleSorting(arr: [Int]) -> Array<Int> {
         var sortArr: [Int] = arr
-        for i in 0..<sortArr.count {
-            for j in 0..<sortArr.count-1-i {
+        let n = sortArr.count
+        for i in 0..<n {
+            for j in 0..<n-1-i {
                 if sortArr[j] > sortArr[j+1] {
                     sortArr.swapAt(j, j+1)
                 }
                 print(sortArr)
             }
+            print("\n")
         }
         return sortArr
     }
+    
+
+    
+    
+    //MARK: 插入排序
+    func insertSorting(arr: [Int]) -> Array<Int> {
+        var sortArr = arr
+        let n = sortArr.count
+        for i in 0..<n {
+            for j in stride(from: i, to: 0, by: -1) {
+                if sortArr[j] < sortArr[j-1] {
+                    sortArr.swapAt(j, j-1)
+                }
+                print(sortArr)
+            }
+            print("\n")
+        }
+        return sortArr
+    }
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     //MARK: 选择排序
     func selectionSorting(arr: [Int]) -> Array<Int> {
@@ -155,18 +130,23 @@ class BJArithmeticViewController: UIViewController {
         return sortArr
     }
     
-    //MARK: 插入排序
-    func insertSorting(arr: [Int]) -> Array<Int> {
-        var sortArr = arr
-        for i in 0..<sortArr.count {
-            for j in stride(from: i, to: 0, by: -1) {
-                if sortArr[j] < sortArr[j-1] {
-                    sortArr.swapAt(j, j-1)
-                }
-            }
-        }
-        return sortArr
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     
     //MARK: 希尔排序
     var data: [Int] = Array()
@@ -191,11 +171,23 @@ class BJArithmeticViewController: UIViewController {
         recursiveShellSort(incremental: incremental/2)
     }
     
-    //MARK: 归并排序
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //MARK: -- 归并排序
     var sortArr: [Int] = Array()
     func merageSorting(arr: [Int]) -> Array<Int> {
         sortArr = arr
-        recursiveSort(l: 0, r: arr.count-1)
+        let n = sortArr.count
+        print("原数组",sortArr);
+        
+        recursiveSort(l: 0, r: n-1)
         return sortArr
     }
     func recursiveSort(l: Int, r: Int) {
@@ -203,24 +195,28 @@ class BJArithmeticViewController: UIViewController {
             return
         }
         let mid = (l + r)/2
-        print("开始")
-        print(mid)
+        // 分割
         recursiveSort(l: l, r: mid)
         recursiveSort(l: mid+1, r: r)
-        print("递归结束")
-        print(mid)
+
+        // 合并分割的数组
         merge(l: l, mid: mid, r: r)
+        print(sortArr)
+    
+        print("\n")
     }
     func merge(l: Int, mid: Int, r: Int) {
         var aux: [Int] = Array()
         for i in l..<r+1 {
             aux.append(sortArr[i])
         }
-        print(aux)
-        
+        print("aux",aux)
+        print("sortArr",sortArr)
+
         var i = l
         var j = mid+1
         
+        // 没懂
         for k in l..<r+1 {
             if i > mid {
                 sortArr[k] = aux[j-l]
@@ -239,19 +235,21 @@ class BJArithmeticViewController: UIViewController {
     }
     
     
-    //MARK: 快速排序
+    //MARK: -- 快速排序
     var qArr: [Int] = Array()
     
     func quickSorting(arr: [Int]) -> Array<Int> {
-        self.qArr = arr
-        recursiveQuickSort(l: 0, r: qArr.count-1)
+        qArr = arr
+        let n = qArr.count
+        
+        recursiveQuickSort(l: 0, r: n-1)
         return self.qArr
     }
     func recursiveQuickSort(l: Int, r: Int) {
         if l >= r {
             return
         }
-        let p = partition(l: l, r: r)
+        let p = partition(l: l, r: r) // 分区函数
         recursiveQuickSort(l: l, r: p-1)
         recursiveQuickSort(l: p+1, r: r)
     }
@@ -268,10 +266,10 @@ class BJArithmeticViewController: UIViewController {
         return j
     }
     
-    //MARK:- 《《《---查找算法---》》》
-    //MARK: 顺序查找
+    //MARK: - 查找
+    //MARK: -- 顺序查找
     
-    //MARK: 二分查找
+    //MARK: -- 二分查找
     func binarySearch(list: [Int], key: Int) -> Int {
         var low = 0
         var high = list.count - 1

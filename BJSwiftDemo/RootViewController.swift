@@ -78,8 +78,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                let vc = BJLeetCodeViewController()
-//                let vc = BJArithmeticViewController()
+//                let vc = BJLeetCodeViewController()
+                let vc = BJArithmeticViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if indexPath.row == 1 {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
