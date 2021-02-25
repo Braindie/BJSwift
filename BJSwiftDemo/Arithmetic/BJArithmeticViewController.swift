@@ -37,6 +37,9 @@ class BJArithmeticViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         self.view.backgroundColor = UIColor.white;
+        
+        let arr = [6,5,7,1,3,2,4]
+        
 
 //        two.right = twoRight
 //
@@ -44,7 +47,9 @@ class BJArithmeticViewController: UIViewController {
         
 //        let value = self.isSymmetric(one)
         
-        let value = self.quickSorting(arr: [6,5,7,1,3,2,4])
+//        let value = self.merageSorting(arr: arr)
+        
+        let value = self.quickSorting(arr: arr)
     
 //        let value = levelOrderBottom(one)
         
@@ -63,10 +68,12 @@ class BJArithmeticViewController: UIViewController {
     //MARK: - 排序
     
     //MARK: -
-    //MARK: 冒泡排序
+    //MARK: 冒泡排序，（原地排序，稳定排序，O(n*n)）
+    
     func bubbleSorting(arr: [Int]) -> Array<Int> {
         var sortArr: [Int] = arr
         let n = sortArr.count
+        
         for i in 0..<n {
             for j in 0..<n-1-i {
                 if sortArr[j] > sortArr[j+1] {
@@ -74,6 +81,7 @@ class BJArithmeticViewController: UIViewController {
                 }
                 print(sortArr)
             }
+            // 冒泡遍历一次，最大数归位
             print("\n")
         }
         return sortArr
@@ -82,10 +90,12 @@ class BJArithmeticViewController: UIViewController {
 
     
     
-    //MARK: 插入排序
+    //MARK: 插入排序，（原地排序，稳定排序，O(n*n)）
+    // 比冒泡优化空间大，看希尔排序
     func insertSorting(arr: [Int]) -> Array<Int> {
         var sortArr = arr
         let n = sortArr.count
+        
         for i in 0..<n {
             for j in stride(from: i, to: 0, by: -1) {
                 if sortArr[j] < sortArr[j-1] {
@@ -93,28 +103,42 @@ class BJArithmeticViewController: UIViewController {
                 }
                 print(sortArr)
             }
+            // 第n次遍历，前n位顺序已排
             print("\n")
         }
         return sortArr
     }
     
+    //MARK: 希尔排序
+    var data: [Int] = Array()
+    func shellSorting(arr: [Int]) -> Array<Int> {
+        self.data = arr
+        let incremental = arr.count
+        recursiveShellSort(incremental: incremental)
+        return self.data
+    }
+    func recursiveShellSort(incremental: Int) {
+        if incremental == 0 {
+            return
+        }
+        for index in 0..<data.count - incremental {
+            let a = data[index]
+            let b = data[index + incremental]
+            if a > b {
+                data.swapAt(index, index+incremental)
+            }
+            print(data)
+        }
+        print("\n")
+        
+        // 递归
+        recursiveShellSort(incremental: incremental/2)
+    }
     
     
-
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //MARK: 选择排序
+    //MARK: 选择排序（原地排序，非稳定排序，O(n*n)）
     func selectionSorting(arr: [Int]) -> Array<Int> {
         var sortArr = arr
         let n = sortArr.count
@@ -126,50 +150,17 @@ class BJArithmeticViewController: UIViewController {
                 }
             }
             sortArr.swapAt(i, minIndex)
+            // 遍历一次，最小数归位
+            print(sortArr)
+            print("\n")
         }
         return sortArr
     }
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     
-    //MARK: 希尔排序
-    var data: [Int] = Array()
-    func shellSorting(arr: [Int]) -> Array<Int> {
-        self.data = arr
-        let incremental = arr.count
-        recursiveShellSort(incremental: incremental) // 先递归
-        self.data = insertSorting(arr: self.data) // 插入排序
-        return self.data
-    }
-    func recursiveShellSort(incremental: Int) { // 递归
-        if incremental == 0 {
-            return
-        }
-        for index in 0..<data.count - incremental {
-            let a = data[index]
-            let b = data[index + incremental]
-            if a > b {
-                data.swapAt(index, index+incremental)
-            }
-        }
-        recursiveShellSort(incremental: incremental/2)
-    }
     
     
     
@@ -179,8 +170,7 @@ class BJArithmeticViewController: UIViewController {
     
     
     
-    
-    //MARK: -- 归并排序
+    //MARK: 归并排序（非原地排序，稳定排序，O(n*logn)，空间复杂度O(n)）
     var sortArr: [Int] = Array()
     func merageSorting(arr: [Int]) -> Array<Int> {
         sortArr = arr
@@ -195,23 +185,23 @@ class BJArithmeticViewController: UIViewController {
             return
         }
         let mid = (l + r)/2
-        // 分割
+        // 递归、分治
         recursiveSort(l: l, r: mid)
         recursiveSort(l: mid+1, r: r)
 
-        // 合并分割的数组
+        // 合并分割的数组（合并两个有序子数组）
         merge(l: l, mid: mid, r: r)
         print(sortArr)
     
         print("\n")
     }
+    // 合并函数
     func merge(l: Int, mid: Int, r: Int) {
         var aux: [Int] = Array()
         for i in l..<r+1 {
             aux.append(sortArr[i])
+            print("aux",aux)
         }
-        print("aux",aux)
-        print("sortArr",sortArr)
 
         var i = l
         var j = mid+1
@@ -231,15 +221,17 @@ class BJArithmeticViewController: UIViewController {
                 sortArr[k] = aux[j-l]
                 j += 1
             }
+            print("sortArr",sortArr)
         }
     }
     
     
-    //MARK: -- 快速排序
+    //MARK: -- 快速排序（快速排序的优化策略）
     var qArr: [Int] = Array()
     
     func quickSorting(arr: [Int]) -> Array<Int> {
         qArr = arr
+        print("原数组",qArr);
         let n = qArr.count
         
         recursiveQuickSort(l: 0, r: n-1)
@@ -249,34 +241,59 @@ class BJArithmeticViewController: UIViewController {
         if l >= r {
             return
         }
-        let p = partition(l: l, r: r) // 分区函数
+        // 分治、递归
+        let p = partition(l: l, r: r)
         recursiveQuickSort(l: l, r: p-1)
         recursiveQuickSort(l: p+1, r: r)
     }
+    // 分区函数
     func partition(l: Int, r: Int) -> Int {
-        let v = qArr[l]
-        var j = l
-        for i in l+1..<r+1 {
-            if qArr[i] < v {
-                j += 1
+        let x = qArr[l]
+        var i = l
+        var j = r
+        while i < j {
+            // 从右向左找小于x的数来填s[i]
+            while i < j && qArr[j] >= x {
+                j -= 1
             }
+            if i < j {
+                qArr[i] = qArr[j] //将s[j]填到s[i]中，s[j]就形成了一个新的坑
+                i += 1
+            }
+            // 从左向右找大于或等于x的数来填s[j]
+            while i < j && qArr[i] < x {
+                i += 1
+            }
+            if i < j {
+                qArr[j] = qArr[i] //将s[i]填到s[j]中，s[i]就形成了一个新的坑
+                j -= 1
+            }
+            print(qArr)
         }
-        qArr.swapAt(l, j)
+        qArr[i] = x //退出时，i等于j。将x填到这个坑中。完成x左边都小于x，x右边都大于x
+        
+        print(i)
         print(qArr)
-        return j
+        return i
     }
+    //MARK: 快速排序（快速排序的优化策略）
+    
+    
     
     //MARK: - 查找
-    //MARK: -- 顺序查找
+    //MARK: 顺序查找
     
-    //MARK: -- 二分查找
+    //MARK: -- 二分查找（O(logn)）
+    // 1、依赖顺序表结构，2、针对的是有序数据，3、数据量太小不适合，顺序遍历就足够了，4、数据量太大也不合适，因为需要***连续***的内存空间（数组）来存储
     func binarySearch(list: [Int], key: Int) -> Int {
         var low = 0
         var high = list.count - 1
         var time = 0
         while low <= high {
             time += 1
-            let mid = (low + high) / 2
+//            let mid = (low + high) / 2 // 可能会溢出
+            let mid = low + (high-low)/2
+            
             if key < list[mid] {
                 high = mid - 1
             } else if key > list[mid] {
@@ -288,6 +305,11 @@ class BJArithmeticViewController: UIViewController {
         }
         return 0
     }
+    // 凡是用二分查找能解决的，绝大部分更倾向于用散列表或二叉查找数
+    // 变体的二分查找容易出错：1、终止条件；2、区间上下界更新方法；3、返回值选择
+    // 下面的“近似”查找问题可用二分查找：1、查找第一个值等于给定值的元素；2、查找最后一个值等于给定的元素；3、查找第一个大于等于给定值的元素；4、查找最后一个值小于等于给定值的元素
+    
+    
     
     //MARK: 插值查找
     func insertSearch(list: [Int], key: Int) -> Int {

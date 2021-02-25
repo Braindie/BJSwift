@@ -16,7 +16,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Swift"
+//        self.title = "Swift"
       
         self.myTableView.delegate = self;
         self.myTableView.dataSource = self;
@@ -49,27 +49,28 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             if indexPath.row == 0 {
                 cell.textLabel?.text = ""
             }
-        } else if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                cell.textLabel?.text = "代理"
-            } else if indexPath.row == 1 {
-                cell.textLabel?.text = "闭包"
-            } else if indexPath.row == 2 {
-                cell.textLabel?.text = "KVO（OC特性，通过NSObject实现）"
-            }
-        } else if indexPath.section == 2 {
-            if indexPath.row == 0 {
-                cell.textLabel?.text = "扩展（Swift没有分类了）"
-            } else if indexPath.row == 1 {
-                cell.textLabel?.text = "KVC（静态语言，通过NSObject实现）"
-            } else if indexPath.row == 2 {
-                cell.textLabel?.text = "构造器（初始化函数）"
-            } else if indexPath.row == 3 {
-                cell.textLabel?.text = "类方法与实例方法"
-            } else if indexPath.row == 4 {
-                cell.textLabel?.text = "泛型"
-            }
         }
+//        else if indexPath.section == 1 {
+//            if indexPath.row == 0 {
+//                cell.textLabel?.text = "代理"
+//            } else if indexPath.row == 1 {
+//                cell.textLabel?.text = "闭包"
+//            } else if indexPath.row == 2 {
+//                cell.textLabel?.text = "KVO（OC特性，通过NSObject实现）"
+//            }
+//        } else if indexPath.section == 2 {
+//            if indexPath.row == 0 {
+//                cell.textLabel?.text = "扩展（Swift没有分类了）"
+//            } else if indexPath.row == 1 {
+//                cell.textLabel?.text = "KVC（静态语言，通过NSObject实现）"
+//            } else if indexPath.row == 2 {
+//                cell.textLabel?.text = "构造器（初始化函数）"
+//            } else if indexPath.row == 3 {
+//                cell.textLabel?.text = "类方法与实例方法"
+//            } else if indexPath.row == 4 {
+//                cell.textLabel?.text = "泛型"
+//            }
+//        }
 
         return cell
     }

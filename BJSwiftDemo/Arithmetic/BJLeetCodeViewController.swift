@@ -6,6 +6,14 @@
 //  Copyright © 2020 zcgt_ios_01. All rights reserved.
 //
 
+/*
+ 单链表的反转206
+ 链表中环的检测142
+ 两个有序的链表的合并21
+ 删除链表的第n个节点19
+ 求链表的中间节点876
+ */
+
 import UIKit
 
 class BJLeetCodeViewController: UIViewController {
@@ -91,12 +99,16 @@ class BJLeetCodeViewController: UIViewController {
         
 //        let value = self.sortedArrayToBST([1,3,4,5,12,34,56,65,76,88,235,444])
         
-//        let value = self.reverseList(one)
+//        let value = self.hasCycle(head: one)
         
-        let value = self.firstUniqChar("abcdabc")
+//        let value = self.firstUniqChar("abcdabc")
+        
+//        let value = self.removeNthFromeEnd(one, n: 2)
+        
+        let value = self.middleNode(one)
         
         
-        
+        print("结果：")
         print(value)
         
     }
@@ -190,6 +202,35 @@ class BJLeetCodeViewController: UIViewController {
         return prefix
     }
     
+    //MARK: 19、删除链表倒数第N个节点
+    func removeNthFromeEnd(_ head: ListNode, n: Int) -> ListNode {
+        /// 计算链表长度
+        var dummy = ListNode(0)
+        dummy.next = head
+        
+        let lenght = getLenght(head)
+        
+        var cur = dummy
+        for i in 0..<lenght-n {
+            cur = cur.next!
+        }
+        cur.next = cur.next?.next
+        let ans = dummy.next
+        return ans!
+        
+        /// 栈
+        /// 一次遍历
+    }
+    func getLenght(_ l: ListNode?) -> Int {
+        var length = 0
+        var head = l
+        while head != nil {
+            length += 1
+            head = head?.next
+        }
+        return length
+    }
+    
     //MARK: 20、有效的括号
     func isValid(_ s: String) -> Bool {
         var stack = [Character]() // 模拟栈
@@ -210,17 +251,40 @@ class BJLeetCodeViewController: UIViewController {
 
     //MARK: 21、合并两个有序链表
     func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-        if l1 == nil {
-            return l2
-        } else if l2 == nil {
-            return l1
-        } else if (l1!.val < l2!.val) {
-            l1?.next = self.mergeTwoLists(l1?.next, l2)
-            return l1
-        } else {
-            l2?.next = self.mergeTwoLists(l1, l2?.next)
-            return l2
+        /// 迭代
+        let prehead = ListNode(-1)
+
+        var L1 = l1
+        var L2 = l2
+        var prev = prehead
+        while L1 != nil && L2 != nil {
+            if L1!.val <= L2!.val {
+                prev.next = L1
+                L1 = L1?.next
+            } else {
+                prev.next = L2
+                L2 = L2?.next
+            }
+            prev = prev.next!
         }
+        // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
+        prev.next = L1==nil ? L2 : L1
+        
+        return prehead.next
+
+        
+        /// 递归
+//        if l1 == nil {
+//            return l2
+//        } else if l2 == nil {
+//            return l1
+//        } else if (l1!.val < l2!.val) {
+//            l1?.next = self.mergeTwoLists(l1?.next, l2)
+//            return l1
+//        } else {
+//            l2?.next = self.mergeTwoLists(l1, l2?.next)
+//            return l2
+//        }
     }
     
     //MARK: 26、删除排序数组中的重复项
@@ -431,16 +495,16 @@ class BJLeetCodeViewController: UIViewController {
     //MARK: 206、反转链表
     func reverseList(_ head: ListNode?) -> ListNode? {
         // 方法一：迭代
-        var prev: ListNode?
-        prev = nil
-        var curr = head
-        while curr != nil {
-            let nextTemp = curr?.next
-            curr?.next = prev
-            prev = curr
-            curr = nextTemp
-        }
-        return prev
+//        var prev: ListNode? = nil
+//        var curr = head
+//        while curr != nil {
+//            let nextTemp = curr?.next
+//            curr?.next = prev
+//            prev = curr
+//            curr = nextTemp
+//        }
+//        return prev
+        
         
         // 方法二：递归
         if head == nil || head?.next == nil {
@@ -468,5 +532,16 @@ class BJLeetCodeViewController: UIViewController {
         }
         return -1
     }
-
+    
+    //MARK: 876
+    func middleNode(_ head: ListNode?) -> ListNode {
+        // 快慢指针法
+        var slow = head
+        var fast = head
+        while fast != nil && fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+        return slow!
+    }
 }
